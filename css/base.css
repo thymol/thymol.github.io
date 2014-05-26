@@ -1,0 +1,61 @@
+body {
+	font-family: "Trebuchet MS", verdana, lucida, arial, helvetica, sans-serif;
+	color: black;
+	font-size: 16px;
+	background-image: url("../img/logo-title.png");
+	background-repeat: no-repeat;
+}
+
+.heading {
+	color: grey;
+	font-size: 42px;
+	position: absolute;
+	top: 30px;
+	left: 226px;
+}
+
+.margin {
+	color: grey;
+	font-size: 18px;
+	position: absolute;
+	top: 155px;
+	left: 10px;
+}
+
+.margin {
+	color: grey;
+	font-size: 18px;
+	line-height: 150%;
+	position: absolute;
+	top: 155px;
+	left: 20px;
+}
+
+.content {
+	position: absolute;
+	top: 90px;
+	left: 226px;
+}
+
+.heading a {
+	color: #f90;
+}
+
+.footer {
+	color: grey;
+	font-size: 18px;
+	position: absolute;
+	top: 800px;
+	left: 20px;
+}
+
+
+a:link {
+	color: grey;
+	text-decoration-line: none;
+	-moz-text-decoration-line: none; /* Code for Firefox */	
+}
+
+a:visited,a:hover,a:active {
+	color: #369;
+}

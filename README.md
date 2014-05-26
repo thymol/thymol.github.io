@@ -1,4 +1,4 @@
-thymol.github.com
-=================
+thymol.github.io
+================
 
-Website for thymoljs.org
+Thymol website http://www.thymoljs.org

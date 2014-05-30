@@ -17,17 +17,9 @@ body {
 .margin {
 	color: grey;
 	font-size: 18px;
-	position: absolute;
-	top: 155px;
-	left: 10px;
-}
-
-.margin {
-	color: grey;
-	font-size: 18px;
 	line-height: 150%;
 	position: absolute;
-	top: 155px;
+	top: 205px;
 	left: 20px;
 }
 

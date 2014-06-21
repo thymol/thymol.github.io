@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../../css/base.css">
+<title>thymoljs.org documentation : extensions : attributes page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../../js/clickthing.js"></script>
+<body>
+  <div th:replace="../../fragments::frame(docs='true',extn='true',level='../../')"></div>
+  <div class="content">
+    <h2>attributes</h2>
+<p>Thymol custom attributes allow you to extend Thymol in a way that&#39;s similar to Thymeleaf&#39;s custom dialects.</p>
+<p>Custom attributes are defined by invoking the &quot;thymol.configureAttributeProcessor&quot; function.</p>
+<p><span style="font-weight: bold;">thymol.configureAttributeProcessor = function(prefix, suffix, attrProcessorFunction, precedence, dataAttributeName)</span></p>
+<ul>
+<li><p>prefix - specifies the &quot;namespace&quot; prefix value that introduces the attribute definition in the template. This is normally a short string, may be null to signify no prefix.</p></li>
+<li><p>suffix - the name of the attribute being defined.</p></li>
+<li><p>attrProcessorFunction - the definition of a callback function that is executed when the attribute is encountered during template processing.</p></li>
+<li><p>precedence - the value assigned to the run-time precedence of the attribute. This controls order of processing: low precedence value == process sooner high precedence value == process later.</p></li>
+<li><p>dataAttributeName - defines a synonym for the custom attribute - will be treated as a &quot;data-*&quot; html5 attribute by may be given any (html5) valid name.</p>
+<ul>
+<li><p>attrProcessorFunction = function(element, attr, thAttr, thAttrObj)</p>
+<ul>
+<li>element    - the DOM element that the attribute is associated with.</li>
+<li>attr       - the DOM Attr being processed</li>
+<li>thAttr     - the Thymol internal representation of the attribute instance.  </li>
+<li>thAttrObj  - the Thymol internal representation of the attribute object.  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The body of the attrProcessorFunction performs the intent of the custom attribute and may do what you will.      </p>
+<p>The attrProcessorFunction should return a boolean result value that is &quot;true&quot; if the function changed the DOM in any way and &quot;false&quot; if not.              </p>
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+</body>
+</html>

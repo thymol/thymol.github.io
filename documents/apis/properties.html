@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../../css/base.css">
+<title>thymoljs.org documentation : apis : properties page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../../js/clickthing.js"></script>
+<body>
+  <div th:replace="../../fragments::frame(docs='true',apis='true',level='../../')"></div>
+  <div class="content">
+    <h2>properties</h2>
+<p>The following objects provide javascript access to the well-known contexts:</p>
+<ul>
+<li><h5>thymol.applicationContext</h5></li>
+<li><h5>thymol.sessionContext</h5></li>
+<li><h5>thymol.requestContext</h5></li>
+</ul>
+<p>Each of these contexts exports a useful set of functions:</p>
+<ul>
+<li><h5>createVariable = function(name, value)</h5><p>Creates a variable that may be used in Thymol expressions.</p></li>
+<li><h5>getAttribute = function(name)</h5><p>Returns the named value (a generic object, may or may not be a variable).</p></li>
+<li><h5>addAttribute = function(name, value)</h5><p>Adds a generic object with a given name.</p></li>
+</ul>
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+</body>
+</html>

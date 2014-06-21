@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../../css/base.css">
+<title>thymoljs.org documentation : apis : functions page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../../js/clickthing.js"></script>
+<body>
+  <div th:replace="../../fragments::frame(docs='true',apis='true',level='../../')"></div>
+  <div class="content">
+    <h2>functions</h2>
+<p>The following functions provide javascript access to a number of utilities:</p>
+<ul>
+<li><h5>thymol.getMessage = function(varName,parameters,returnStringAlways)</h5><p>Returns the value form ThMessages keyed by &quot;varName&quot; with placeholders substituted by parameters in given array</p></li>
+<li><h5>thymol.getLocale = function()</h5>                                      <p>For future use</li></p>
+<li><h5>thymol.getExpression = function(expression,element)                </h5><p>Parses and resolves the given Thymol expression in the context of the given DOM element</p></li>
+<li><h5>thymol.ready = function(callback)                                  </h5><p>Injects a callback function that will be executed after Thymol has loaded. See <a href="execution-order.html">&quot;execution order&quot;</a></p></li>
+<li><h5>thymol.configurePreExecution = function(callback)                  </h5><p>Injects a callback function that will be executed before Thymol main processing, repeated calls add callback that will be executed in order of creation. See <a href="execution-order.html">&quot;execution order&quot;</a></p></li>
+<li><h5>thymol.configurePostExecution = function(callback)                 </h5><p>Injects a callback function that will be executed after Thymol main processing, repeated calls add callback that will be executed in order of creation. See <a href="execution-order.html">&quot;execution order&quot;</a></p></li>
+<li><h5>thymol.configureModule = function(module)                          </h5><p>For the creation of custom Expression Utility Objects. See <a href="../extensions/expression-objects.html">&quot;expression objects&quot;</a>.</p></li>
+<li><h5>thymol.configureAttributeProcessor = function(prefix, suffix, func, prec, dataAttr)   </h5><p>For the creation of custom attributes. See <a href="../extensions/attributes.html">&quot;expression objects&quot;</a>.</p></li>
+<li><h5>thymol.configureElementProcessor = function(prefix, suffix, func)   </h5><p>For the creation of custom elements. See <a href="../extensions/elements.html">&quot;elements&quot;</a>.</p></li>
+<li><h5>thymol.addDialect = function(spec)                                        </h5><p>For the creation of groups of related custom extensions. See <a href="../extensions/dialects.html">&quot;dialects&quot;</a>.</p></li>
+</ul>
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+</body>
+</html>

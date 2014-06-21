@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../../css/base.css">
+<title>thymoljs.org documentation : thymol mappings page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../../js/clickthing.js"></script>
+<body>
+  <div th:replace="../../fragments::frame(docs='true',ctrl='true',level='../../')"></div>
+  <div class="content">
+    <h2>thMappings</h2>
+    <p>Another feature of Thymol is the thMappings structure that defines Thymol mappings.</p>
+    <p>Mappings are intended mainly to simplify the translation between URI values within a Thymeleaf template and real world URLs. Mapping URLs may locate resources in the local file system or on the network.</p>
+    <p>Mappings are defined in a javascript string array of key/value pairs called &quot;thMappings&quot;.
+    <p>
+    <p>The mapping translation is applied to template locator values and to URLs defined by Thymeleaf @{...} URL expressions after any variable substitutions and expression evaluations have been calculated.
+    <p>The tra nslation made is as follows: if the leading part of an expression (either URL or template locator) matches a mapping key, then that part of the expression is replaced by the mapping value. If two or more mapping keys share some leading text in common, then the longest matching fragment is taken in preference to any shorter segments.</p>
+    <p>Here is an example mappings definition set:</p>
+<pre><code>        var thMappings = [
+            [&quot;/webjars/bootstrap/2.3.0/css/bootstrap.min.css&quot;,        &quot;http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap.min.css&quot;],
+            [&quot;/jquery&quot;,                                               &quot;http://code.jquery.com/mobile/1.3.1&quot;],
+            [&quot;/thymeleaf&quot;,                                            &quot;/home/fred/projects/new-site/templates&quot;],
+            [&quot;/thymeleaf/welcome&quot;,                                    &quot;/home/live/distr/WEB-INF/thymeleaf/welcome&quot;],
+            [&quot;/resources&quot;,                                            &quot;/home/fred/projects/new-site/resources&quot;],
+            [&quot;/&quot;,                                                     &quot;/home/live/distr/WEB-INF/thymeleaf/welcome.html&quot;]
+        ];</code></pre><p>Under this example, a reference to &quot;@{/thymleaf/hello.html}&quot; would be translated into:</p>
+    <p>&quot;/home/fred/projects/new-site/templates/hello.html&quot;</p>
+    <p>and a reference to &quot;@{/}&quot; would translate to</p>
+    <p>&quot;/home/live/distr/WEB-INF/thymeleaf/welcome.html&quot;.</p>
+    <p>Tip:</p>
+    <p>An effect similar to mapping can be accomplished using thVars, by defining a variable that simulates a URI or even a Thymeleaf function.</p>
+    <p>For example:</p>
+<pre><code>        var thVars = [
+           ...
+            [&quot;#dates.format(visit.date.toDate(), \&#39;yyyy-MM-dd\&#39;)&quot;,        &quot;2013-07-12&quot;],
+           ...
+        ];</code></pre><p>This variable simulates the effect of a particular Thymeleaf #dates expression utility.</p>
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+
+</body>
+</html>

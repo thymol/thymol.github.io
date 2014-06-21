@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+                <link rel="stylesheet" href="css/base.css">
+                <title>thymoljs.org download page</title>
+	</head>
+	<script th:remove="all" type="text/javascript" src="bower_components/thymol/dist/thymol.min.js" data-thymol-load="js/clickthing.js"></script>
+	<body>
+		<div th:replace="fragments::frame"></div>
+ 		<div class="content"> 		
+ 		  <h2>download</h2>
+ 		  <h3>current version</h3>
+		  <p>You can download the source for the current version of Thymol from <a href="https://github.com/thymol/thymol.js/archive/master.zip">github.</a></p>
+ 		  <h3>download distribution</h3>
+		  <p>You can download the current Thymol distribution file from <a href="http://sourceforge.net/projects/thymol/">sourceforge.</a></p>
+ 		  <h3>archive versions</h3>
+		  <p>You can download older versions of Thymol from <a href="http://sourceforge.net/u/jjbenson/wiki/thymol/">sourceforge.</a></p>
+ 		  <h3>(this) web site</h3>
+		  <p>You can download the source for the current version of this web site from <a href="https://github.com/thymol/thymol.github.io/archive/master.zip">github.</a></p>
+ 		</div>
+		<div th:replace="fragments::footer"></div>
+	</body>
+</html>

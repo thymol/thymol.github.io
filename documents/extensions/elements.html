@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../../css/base.css">
+<title>thymoljs.org documentation : extensions : elements page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../../js/clickthing.js"></script>
+<body>
+  <div th:replace="../../fragments::frame(docs='true',extn='true',level='../../')"></div>
+  <div class="content">
+    <h2>elements</h2>
+<p>Thymol custom elements allow you to extend Thymol in a way that&#39;s similar to Thymeleaf&#39;s custom dialects.</p>
+<p>Custom elements are defined by invoking the &quot;thymol.configureElementProcessor&quot; function.</p>
+<p><span style="font-weight: bold;">thymol.configureElementProcessor = function(prefix, suffix, elementProcessorFunction)</span></p>
+<ul>
+<li><p>prefix - specifies the &quot;namespace&quot; prefix value that introduces the element definition in the template. This is normally a short string, may be null to signify no prefix.</p></li>
+<li><p>suffix - the name of the element being defined.</p></li>
+<li><p>elementProcessorFunction - the definition of a callback function that is executed when the element is encountered during template processing.</p></li>
+<ul>
+<li><p>elementProcessorFunction = function(element)</p>
+<ul>
+<li>element    - the DOM element instance to be processed.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The body of the elementProcessorFunction performs the intent of the custom element and may do what you will.      </p>
+<p>The elementProcessorFunction should return a boolean result value that is &quot;true&quot; if the function changed the DOM in any way and &quot;false&quot; if not.              </p>
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../css/base.css">
+<title>thymoljs.org documentation : known issues page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../js/clickthing.js"></script>
+<body>
+  <div th:replace="../fragments::frame(issu='true',level='../')"></div>
+  <div class="content">
+    <h2>known issues</h2>
+    <p>This page holds information related to known Thmyol issues. Practical work-arounds are provided where possible.
+    <h2>&lt;th:block&gt; and &lt;tbody&gt;</h2>
+<p>If you use &lt;th:block&gt; in conjunction with prototype-only comment blocks within a &lt;table&gt; element, you may encounter a problem with the resultant html.</p>
+<p>When you define a table with no &lt;tbody&gt; elements, the native html parser in most browsers will create &lt;tbody&gt; element(s) for you. A problem can arise because the parser generated &lt;tbody&gt; is usually inserted inside the pre-existing &lt;th:block&gt; and prototype-only comment blocks. As a result, the Thymol output html will probably not be exactly as Thymeleaf would produce it.</p>
+<p>Here is an example:</p><pre><code>      &lt;table&gt;
+	  &lt;!--/*/ &lt;th:block th:each="user : ${users}"&gt; /*/--&gt;
+	  &lt;tr&gt;
+	      &lt;td th:text="${user.login}"&gt;...&lt;/td&gt;
+	      &lt;td th:text="${user.name}"&gt;...&lt;/td&gt;
+	  &lt;/tr&gt;
+	  &lt;tr&gt;
+	      &lt;td col span="2" th:text="${user.address}"&gt;...&lt;/td&gt;
+	  &lt;/tr&gt;
+	  &lt;!--/*/ &lt;/th:block&gt; /*/--&gt;
+      &lt;/table&gt;</pre></code><p>If we process this block with Thymol and the following thVars:</p>
+<pre><code>	var thVars = [
+		["user1",		"#{'login' : 'admin', 'name' : 'John Jones', 'address' : 'London'}"],
+		["user2",		"#{'login' : 'manager', 'name' : 'Fred Bloggs', 'address' : 'New York'}"],
+		["users",		"#[ #user1, #user2 ]"],		
+	];</pre></code><p>The result is:</p>	
+<pre><code>	&lt;table&gt;
+		&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;td&gt;admin&lt;/td&gt;
+				&lt;td&gt;John Jones&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td colspan="2"&gt;London&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+		&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;td&gt;manager&lt;/td&gt;
+				&lt;td&gt;Fred Bloggs&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td colspan="2"&gt;New York&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;</pre></code><p>A work-around is to adopt a slightly different template style, if you want to use &lt;th:block&gt; with prototype-only comments then manually define the &lt;tbody&gt; element too:</p>
+<pre><code>	&lt;table&gt;
+	  &lt;tbody&gt;
+	    &lt;!--/*/ &lt;th:block th:each="user : ${users}"&gt; /*/--&gt;
+	    &lt;tr&gt;
+		&lt;td th:text="${user.login}"&gt;...&lt;/td&gt;
+		&lt;td th:text="${user.name}"&gt;...&lt;/td&gt;
+	    &lt;/tr&gt;
+	    &lt;tr&gt;
+		&lt;td colspan="2" th:text="${user.address}"&gt;...&lt;/td&gt;
+	    &lt;/tr&gt;
+	    &lt;!--/*/ &lt;/th:block&gt; /*/--&gt;
+	  &lt;/tbody&gt;
+	&lt;/table&gt;</pre></code><p>This results in the following output:</p>
+<pre><code>	&lt;table&gt;
+		&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;td&gt;admin&lt;/td&gt;
+				&lt;td&gt;John Jones&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td colspan="2"&gt;London&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;manager&lt;/td&gt;
+				&lt;td&gt;Fred Bloggs&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td colspan="2"&gt;New York&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;</pre></code><p>Which is exactly what we originally intended.</p>    
+  </div>
+  <div th:replace="../fragments::footer"></div>
+</body>
+</html>

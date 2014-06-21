@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../../css/base.css">
+<title>thymoljs.org documentation : thAllowNullText page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../../js/clickthing.js"></script>
+<body>
+  <div th:replace="../../fragments::frame(docs='true',ctrl='true',level='../../')"></div>
+  <div class="content">
+    <h2>thAllowNullText</h2>
+    <p>While developing Thymeleaf templates, it&#39;s quite easy to unintentionally define expressions that can&#39;t be resolved or that resolve to null and when developing with Thymol, it can sometimes be difficult to identify where such problems are occurring.</p>
+    <p>In the event that Thymol encounters a &quot;th:text&quot; attribute that resolves to null, by default Thymol will proceed regardless. However, if you set the value of the &quot;thAllowNullText&quot; flag to false, Thymol will raise a window alert whenever this happens.</p>
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+</body>
+</html>

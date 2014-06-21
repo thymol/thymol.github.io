@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+                <link rel="stylesheet" href="css/base.css">
+                <title>thymoljs.org credits page</title>
+	</head>
+	<script th:remove="all" type="text/javascript" src="bower_components/thymol/dist/thymol.min.js" data-thymol-load="js/clickthing.js"></script>
+	<body>
+	<body>
+		<div th:replace="fragments::frame"></div>
+ 		<div class="content"> 		
+		  <h2>credits</h2>
+<ul>
+  <li><p>Daniel Fern&aacute;ndez the originator of Thymeleaf for his advice, help and encouragement.</p></li>
+  <li><p>Emanuel Rabina for his invaluable advice on all Thymol related issues and especially on Thymol 2.0 and custom extensions.</p></li>
+  <li><p>Matthew Crumley for the basis of Thymol&#39;s expression parser/evaluator (<a href="http://silentmatt.com/javascript-expression-evaluator">http://silentmatt.com/javascript-expression-evaluator</a>) thank you so much Matthew! Thanks are also due to Raphael Graf for the precursor ActionScript parser project.</p></li>
+  <li><p>Thomas Frank for the idea behind Thymol&#39;s session context - Thymol doesn&#39;t use Thomas&#39; code (see <a href="http://www.thomasfrank.se/sessionvars.html">http://www.thomasfrank.se/sessionvars.html</a>), but the principle of operation of session persistence is the same. Many thanks Thomas!</p></li>
+  <li><p>Much of the Date formatting code is reproduced from &quot;Date Format 1.2.3 (c) 2007-2009 Steven Levithan <stevenlevithan.com>&quot; and is published under the MIT license <a href="http://blog.stevenlevithan.com/archives/date-time-format">here</a>. This code includes enhancements by Scott Trenda and Kris Kowal.</p></li>
+</ul>      
+
+ 		</div>
+		<div th:replace="fragments::footer"></div>
+	</body>
+</html>

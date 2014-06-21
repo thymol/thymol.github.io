@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../css/base.css">
+<title>thymoljs.org documentation : browser constraints page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../js/clickthing.js"></script>
+<body>
+  <div th:replace="../fragments::frame(docs='true',level='../')"></div>
+  <div class="content">
+    <h2>browser constraints</h2>
+    <p>Thymol was originally intended for use in a static (non web container) environment, because of this, by default it uses &quot;file://&quot; protocol URIs to access templates.</p>
+    <p>In local file system based developments, the accessibility of referenced templates is subject to the constraints imposed by the javascript host within which Thymol is being executed, this is normally a web-browser.</p>
+    <p>To view Thymeleaf templates loaded from the file system your browser must be configured to allow access to local (file-store) files.</p>
+    <h3>firefox</h3>
+    <p>To configure firefox so that it relaxes the strict "same origin" policy, open firefox and type "about:config" into the address bar, proceed to the preference setting facility and locate the "security.fileuri.strict_origin_policy" parameter. You need to set the value of this flag to "false".</p>
+    <h3>chrome</h3>
+    <p>The simplest way to enable local file access is to add the &quot;allow-file-access-from-files&quot; command line parameter to your Chrome start-up command:</p>
+    <pre>
+      <code>&lt;path-to-chrome-home&gt;chrome.exe --allow-file-access-from-files
+</code></pre><h4>include/substituteby</h4>
+    <p>You cannot use th:substituteby to replace the content of the head element of an html file using the Chrome browser, if possible, use th:include instead.</p>
+    <h3>internet explorer</h3>
+    <p>Local file access is enabled by default by Internet Explorer</p>
+    <p>(Need to take advice on configuring Safari, Opera etc..)</p>
+    <h3>web server</h3>
+    <p>None of these restrictions apply to files served via http, so if you&#39;re running into too many problems in a file-system based development you may consider deploying your templates and javascript files on a web server.</p>
+  </div>
+  <div th:replace="../fragments::footer"></div>
+</body>
+</html>

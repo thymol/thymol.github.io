@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../../css/base.css">
+<title>thymoljs.org documentation : extensions : expression objects page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../../js/clickthing.js"></script>
+<body>
+  <div th:replace="../../fragments::frame(docs='true',extn='true',level='../../')"></div>
+  <div class="content">
+    <h2>expression objects</h2>
+    <p>Using Thymol 2.0 you may define custom expression utility objects that are executed in the same way as the standard dialect built-in functions (see <a href="../expression-objects.html">here</a>).
+    To do this, you define a javascript function object with a particular layout and configure this function for processing.</p>
+    <h3>function definition</h3>
+    <p>A custom epxression utility object needs to be defined as follows:</p>
+    <pre><code>        var fn = function() {
+        
+            var thExpressionObjectName = fnHashStr;
+          
+            ... // Your custom function implementations and private functions here
+                        
+            return {
+                thExpressionObjectName : thExpressionObjectName,
+                ... // Exported name mappings of your custom functions here
+            };
+        
+        }();</code></pre><p>Where &quot;fn&quot; is the name of the custom expression utility object (which should be unique!) and &quot;fnHashStr&quot; is the name that will be used to refer to this expression object (which should also be unique!).</p>
+        <p>The value of &quot;fn&quot; can be any valid javascript identifier name.</p>
+        <p>The value of &quot;fnHashStr&quot; should equate to a string value and should start with a &quot;#&quot; character.</p>
+    <h4>example</h4>
+    <pre><code>        var fieldsObject = function() {
+
+            var thExpressionObjectName = "#fields";
+
+            function hasErrors(target) {
+		        return false;
+            }
+
+            function errors(target) {
+		        return [];
+            }
+	
+            return {
+		        thExpressionObjectName : thExpressionObjectName,
+		        hasErrors : hasErrors,
+		        errors : errors
+            };
+
+        }();</code></pre><p>This example is taken from the stsm sampler example. You can see it in action <a href="../../examples/templates/v21/stsm/stsm3.html">here</a>.
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+</body>
+</html>

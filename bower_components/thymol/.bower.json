@@ -1,0 +1,39 @@
+{
+  "name": "thymol",
+  "version": "2.0.0-alpha3",
+  "authors": [
+    "jjbenson@users.sf.net"
+  ],
+  "description": "Javascript Thymeleaf Emulation",
+  "main": "dist/thymol.js",
+  "keywords": [
+    "thymeleaf",
+    "template",
+    "javascript",
+    "emulation"
+  ],
+  "license": "Apache 2.0",
+  "homepage": "www.thymoljs.org",
+  "ignore": [
+    "dist/Webcontent",
+    "src",
+    "**/.*",
+    "Gruntfile.js",
+    "README.md",
+    "package.json",
+    "pom.xml"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  },
+  "_release": "2.0.0-alpha3",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.0.0-alpha3",
+    "commit": "1fcdb768d556a44d2276ff5d7de7f57a1e982cd3"
+  },
+  "_source": "git://github.com/thymol/thymol.js.git",
+  "_target": "~2.0.0-alpha3",
+  "_originalSource": "thymol",
+  "_direct": true
+}

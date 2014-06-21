@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../css/base.css">
+<title>thymoljs.org documentation : thymol types page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../js/clickthing.js"></script>
+<body>
+  <div th:replace="../fragments::frame(docs='true',level='../')"></div>
+  <div class="content">
+    <h2>thymol types</h2>
+<p>In creating a javascript emulation of a Java framework, it has been necessary to make some compromises with the use of data types associated with the Expression Utility Objects, these are summarised here.</p>
+<h3>list and array types</h3>
+<p>As far as Thymol is concerned, List and Array types are interchangeable and are represented by the javascript native Array type.</p>
+<h3>date and calendar types</h3>
+<p>As far as Thymol is concerned, Date and Calendar types are interchangeable and are represented by the javascript native Date type.</p>
+<h3>set and map types</h3>
+<p>Thymol includes implementations Set and Map that emulate the Java equivalents as far as is necessary for the Expression Utility Objects to work. These implementations are ThSet and ThMap respectively. </p>
+<p>ThSet exports the following functions:</p>
+<pre><code>        add = function(key)
+        addAll = function(keys)
+        clear = function()
+        contains = function(key)
+        containsAll = function(keys)
+        isEmpty = function()
+        size = function()
+        remove = function(key)
+        toArray = function()
+        toString = function()</code></pre><p>There is another utility function that constructs a ThSet from an Array (removing duplicate keys in the process)</p>
+<pre><code>        ThSet.prototype.fromArray = function(array)
+</code></pre><p>ThMap extends ThSet and additionally exports the following functions:</p>
+<pre><code>        containsKey = function(key)
+        containsValue = function(value)
+        entrySet = function()
+        get = function(key)
+        keySet = function()
+        put = function(key, value)
+        putAll = function(collection)
+        values = function()</code></pre>
+  </div>
+  <div th:replace="../fragments::footer"></div>
+</body>
+</html>

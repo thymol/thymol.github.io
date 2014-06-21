@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../css/base.css">
+<title>thymoljs.org documentation : configuration page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../js/clickthing.js"></script>
+<body>
+  <div th:replace="../fragments::frame(docs='true',level='../')"></div>
+  <div class="content">
+    <h2>configuration</h2>
+    <h3>setting up</h3>
+    <p>Before using Thymol, you will need to configure the bootstrap loader file. You do this by setting values in the thymolConfiguration object in &quot;thymol.js&quot;:</p>
+    <pre><code>       var thymolConfiguration = {
+            // Please set these values!
+            thScriptName : &quot;${thThymolSource}&quot;,
+            thJQuerySource : &quot;${thJQuerySource}&quot;,
+            // These are defaults, change them if you will
+            thPrefix : &quot;th&quot;,
+            thDataPrefix : &quot;data&quot;,
+            thDefaultPrecision : 10,
+            thDefaultProtocol : &quot;file:///&quot;,
+            thDefaultLocale : &quot;en&quot;,
+            thDefaultPrecedence : 20000
+        };</code></pre><p>You must edit the value assigned to the &quot;thScriptName&quot; field and set it&#39;s value to the name of the Thymol library that you wish to use (&quot;thymol-full.js&quot; or &quot;thymol-lite.js&quot; or the minified version of either).</p>
+    <p>The &quot;thJQuerySource&quot; field allows you to define the location of the jquery library you wish to use with Thymol. By default, the jquery library is assumed to be present in the same directory as your Thmyol library file (as specified by &quot;thScriptName&quot;), if this is the case, you only need to provide the jquery file name to get things working.</p>
+    <p>If you remove the &quot;thJQuerySource&quot; field or set it&#39;s value to null or blank, then the bootstrap won&#39;t try to load jquery at all - use this option if your templates load jquery for themselves (via &quot;&lt;script&gt;&quot; tags or otherwise).</p>
+    <p>To use a network available copy of jquery then set the value of &quot;thJQuerySource&quot; to an appropriate URI.</p>
+    <h3>invocation</h3>
+    <p>Having correctly configured &quot;thymol.js&quot; you may now use it in your templates like this:</p>
+    <pre><code>       &lt;script type=&quot;text/javascript&quot; 
+         src=&quot;&lt;path-to-installed-file&gt;/thymol.js&quot; 
+         data-thymol-load=&quot;&lt;list-of-project-specific-files&gt;&quot; 
+         data-thymol-parameters=&quot;&lt;parameter-string&gt;&quot;&gt;
+       &lt;/script&gt;</code></pre><p>The &quot;thymol.js&quot; script may be used to load any number of additional script files specified by a comma separated list value for the &quot;data-thymol-load&quot; attribute. The path to each file in the list is assumed to be relative to the path given in the &quot;src&quot; attribute.</p>
+    <p>You may also pass command-line parameters to Thymol by using the &quot;data-thymol-parameters&quot; attribute. This should be specified as a standard request parameter string (a name/value pair list starting with a &quot;?&quot; and separated by &quot;&amp;&quot;).</p>
+    <p>If you wish to override the usual mechanism of locating jquery for a particular template you can do this by specifying the &quot;data-jquery-src&quot; attribute in the bootloader script tag.</p>
+    <p>For example:</p>
+    <pre><code>       &lt;script type=&quot;text/javascript&quot; 
+         src=&quot;web/js/thymol.js&quot; 
+         data-jquery-src=&quot;http://code.jquery.com/jquery-git2.min.js&quot;
+         data-thymol-load=&quot;page-data.js&quot; 
+         data-thymol-parameters=&quot;?thDebug=true&quot;&gt;
+       &lt;/script&gt;</code></pre>
+  </div>
+  <div th:replace="../fragments::footer"></div>
+</body>
+</html>

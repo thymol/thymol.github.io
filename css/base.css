@@ -1,17 +1,33 @@
 body {
-	font-family: "Trebuchet MS", verdana, lucida, arial, helvetica, sans-serif;
+	font-family: "DejaVu Sans", verdana, lucida, arial, helvetica, sans-serif;
 	color: black;
 	font-size: 16px;
 	background-image: url("../img/logo-title.png");
 	background-repeat: no-repeat;
 }
 
-.heading {
+h1, h2, h3, h4 {
 	color: grey;
+}
+
+code {
+	font-family: "Times", times;
+	color: black;
+	font-size: 16px;
+}
+
+h1 {
+	color: grey;
+	font-style: bold;
 	font-size: 42px;
 	position: absolute;
-	top: 30px;
-	left: 226px;
+	top: 20px;
+	left: 256px;
+}
+
+p {
+	position: relative;
+	left: 20px;
 }
 
 .margin {
@@ -23,22 +39,36 @@ body {
 	left: 20px;
 }
 
+#margin2 {
+	position: relative;
+	left: 20px;
+}
+
+#margin3 {
+	position: relative;
+	left: 20px;
+}
+
 .content {
 	position: absolute;
-	top: 90px;
-	left: 226px;
+	top: 160px;
+	left: 256px;
+	width: 800px;
 }
 
 .heading a {
 	color: #f90;
 }
 
-.footer {
+#footer {
 	color: grey;
-	font-size: 18px;
-	position: absolute;
-	top: 800px;
-	left: 20px;
+	font-size: 10px;
+	font-style: bold;	
+    position:fixed;
+    bottom:0;
+    right:0;	
+    height:18px;
+    width:160px;
 }
 
 

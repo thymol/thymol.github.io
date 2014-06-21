@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../../css/base.css">
+<title>thymoljs.org documentation : thRoot &amp; thPath page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../../js/clickthing.js"></script>
+<body>
+  <div th:replace="../../fragments::frame(docs='true',ctrl='true',level='../../')"></div>
+  <div class="content">
+    <h2>thRoot &amp; thPath</h2>
+    <p>One of the many useful features of Thymeleaf is the TemplateResolver, the mechanism by which templates are located in a web application. At the moment, Thymol has no such facility but takes a much simpler approach.</p>
+    <p>A Thymeleaf template locator takes the form: &quot;template-name::fragment-name&quot;.</p>
+    <p>In the absence of any matching Thymol mappings, Thymol treats all template-name references as relative file locations, they will be relative to either a (user) defined root directory or relative to the enclosing file&#39;s directory location.</p>
+    <p>After parameter processing, Thymol resolves template locators as follows:</p>
+    
+    <ul>
+      <li>
+        <p>If a template-name starts with a period character (&#39;.&#39;), the entire URI is treated as a path relative to the directory of the template containing the reference.</p>
+        <p>e.g. template-name values like &quot;./pages/header/foobar&quot; or &quot;../parent/sibling1/other&quot; are treated as child or cousin directory tree references as the host operating system would treat them.</p>
+      </li>
+      <li>
+        <p>If a template-name doesn&#39;t start with a &#39;.&#39;, but it contains no path separator characters (&#39;/&#39;), it&#39;s also treated as relative to the enclosing file&#39;s directory.</p>
+        <p>e.g. template-name references like &quot;family&quot; are treated as siblings of the current template, &quot;dynasty/bloggs&quot; are treated as being relative to root.</p>
+      </li>
+      <li>
+        <p>All other template-name values are considered to be root relative references.</p> 
+      </li>
+    </ul>
+    
+    <p>Thymol provides two parameters that are used to specify the location to be applied to root relative resolved templates. These parameters are thRoot and thPath.</p>
+    <p>When a root relative path is required during template resolution, in the absence of any matching Thymol mappings, Thymol uses the concatenation of thRoot + thPath + template-name + &quot;.html&quot; to construct the final file URI.</p>
+    <p>Examples</p>
+    
+    <ul>
+      <li>
+        <p>Add something like this to you template before the script tag for "thymol.js"</p>
+    <pre><code>        &lt;script th:remove=&quot;all&quot; type=&quot;text/javascript&quot;&gt;
+          var thRoot=&quot;~/projects/thymol/distr/Webcontent&quot;;
+          var thPath=&quot;examples/thymol-example/hierarchy&quot;;
+        &lt;/script&gt;</code></pre>
+      </li>
+      <li>
+    <p>Create a file called "setThPath.js" at location "../assets/js/" relative to your template containing the following code:</p>
+    <pre><code>      var thRoot=&quot;~/projects/thymol/distr/Webcontent&quot;;
+      var thPath=&quot;examples/thymol-example/hierarchy&quot;;</code></pre>
+    <p>and add this to your template before the script tag for "thymol.js":</p>
+    <pre><code>      &lt;script th:remove=&quot;all&quot; type=&quot;text/javascript&quot; src=&quot;../assets/js/setThPath.js&quot;&gt;&lt;/script&gt;</code></pre>
+    <p>or you could alter the script tag for "thymol.js":</p>
+    <pre><code>      &lt;script th:remove=&quot;all&quot; type=&quot;text/javascript&quot; src=&quot;&lt;some-path&gt;/thymol.js&quot; data-thymol-load=&quot;../assets/js/setThPath.js&quot;&gt;&lt;/script&gt;</code></pre>
+      </li>
+    </ul>
+    
+    <p>Tip - An alternate template resolution strategy is to use thMappings.</p>
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+</body>
+</html>

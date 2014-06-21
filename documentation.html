@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+                <link rel="stylesheet" href="css/base.css">
+                <title>thymoljs.org documentation page</title>
+	</head>
+	<script th:remove="all" type="text/javascript" src="bower_components/thymol/dist/thymol.min.js" data-thymol-load="js/clickthing.js"></script>
+	<body>
+		<div th:replace="fragments::frame(docs='true')"></div>
+ 		<div class="content"> 		
+ 		  <h2>documentation</h2>
+		  <p>The documentation for Thymol 2.0 is very much a "work-in-progress".</p>
+          <p>Please share your comments, corrections, suggestions for improvements and contributions by email to:</p>
+<pre>       docs AT thymoljs.org</pre>          
+		  <p>Please again check later for more content.</p>
+ 		</div>
+		<div th:replace="fragments::footer"></div>
+	</body>
+</html>

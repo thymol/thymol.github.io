@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../../css/base.css">
+<title>thymoljs.org documentation : extensions : dialects page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../../js/clickthing.js"></script>
+<body>
+  <div th:replace="../../fragments::frame(docs='true',extn='true',level='../../')"></div>
+  <div class="content">
+    <h2>dialects</h2>
+    <p>Thymol 2.0 extensions may optionally be grouped together into a logical set sharing the same xml namespace prefix. You do this by invoking the thymol.addDialect function.</p>
+<p><span style="font-weight: bold;">thymol.addDialect = function(dialectSpec)</span></p>
+<p>The single mandatory argument "dialectSpec" names a specification object that should have the following structure:</p>
+<pre><code>        {
+            prefix : prefixNm,
+            attributeProcessors : [ 
+                {
+                    name : attr1Nm,
+                    processor : attr1ProcessorFnNn,
+                    precedence : attr1Prec
+                },
+                {
+                    name : attr2Nm,
+                    processor : attr2ProcessorFnNn,
+                    precedence : attr2Prec
+                }, 
+                ...
+            ],
+            elementProcessors : [
+                {
+                    name : elem1Nm,
+                    processor : elem1ProcessorFnNn
+                },
+                {
+                    name : elem2Nm,
+                    processor : elem2ProcessorFnNn
+                }, 
+                ...
+            ],
+            objects : [
+                obj1ExprObj,
+                obj2ExprObj,
+                {
+                    name : obj1Nm,
+                    object : obj1ProcessorFnNn
+                },
+                {
+                    name : obj2Nm,
+                    object : obj2ProcessorFnNn
+                },
+                ...
+                ...
+            ]
+        }</code></pre><p>Where:</p>
+  <ul>
+      <li>Any of the properties prefix, attributeProcessors, elementProcessors or objects may be omitted.</li>
+      <li>prefixNm is the (xml namespace) prefix used to identify the dialect components.</li>
+      <li>attrNProcessorFnNn is a reference to the Nth atrribute processor function.</li>
+      <li>attrNPrec is the precedence value to assign the Nth attribute (integer low = process early, high = process late, default 20000).</li>
+      <li>objNExprObj is a reference to the Nth <a href="expression-objects.html">configureModule loadable</a> expression object definition.</li>
+      <li>objNNm is the name of the Nth plain javascript expression object (should start with a &quot;#&quot; character).</li>
+      <li>objNProcessorFnNn is a reference to the Nth Nth plain javascript expression object function.</li>
+  </ul>
+  <p>Members of the attributeProcessors array property are name, function, precedence triples.<p>              
+  <p>Members of the elementProcessors array property are name, function pairs.<p>              
+  <p>The prefix value is shared by the attributeProcessors and elementProcessors.<p>              
+  <p>Members of the objects array property may be either functions as defined on the <a href="expression-objects.html">expression objects page</a> or plain javascript objects that expose functions to be called as expression object functions. In this case, the object field specifies the expression object function reference and the name field gives the expression object name.<p>              
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+</body>
+</html>

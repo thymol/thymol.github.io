@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../../css/base.css">
+<title>thymoljs.org documentation : apis : execution order page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../../js/clickthing.js"></script>
+<body>
+  <div th:replace="../../fragments::frame(docs='true',apis='true',level='../../')"></div>
+  <div class="content">
+    <h2>execution order</h2>
+<p>The following functions provide the facility to inject javascript function objects into Thymol run-time processing sequence. These will be executed at predefined points in the Thymol life cycle.</p>
+<ul>
+<li><h5>thymol.ready = function(func)</h5><p>The ready function adds code that will be executed as soon as all Thymol code has been loaded and is ready for execution. The order of processing of these code units is the same as their order of definition.</p>
+<p>This function is useful for establishing code and/or data that needs to be globally available to Thymol at run-time. e.g. You can use thymol.ready to inject javascript that you might otherwise have added using the data-thymol-load &lt;script&gt; attribute mechanism.</p>
+</li>
+<li><h5>thymol.configurePreExecution = function(func)</h5><p>This function injects code that will be executed just before the start of template processing.</p><p>This feature is useful if you want to add code that has some dependency on code or data that is added by "data-thymol-load" or by use of the thymol.ready function.</p></li>
+<li><h5>thymol.configurePostExecution = function(func)</h5><p>This function injects code that will be executed just after the end of template processing.</p><p>This function is useful for housekeeping operations such as recovering resources or deleting/adding content from/to the session context.</p>
+</li>
+</ul>
+<h4>example</h4>
+    <pre><code>    thymol.ready(function () {
+        thymol.configurePreExecution( function() {
+            thymol.sessionContext.createVariable("a","Some text");
+            thymol.sessionContext.createVariable("b",123);
+            thymol.sessionContext.createVariable("c","Hello");
+        });
+        thymol.configurePostExecution( function() {
+            thymol.sessionContext = [];
+        });
+    });</code></pre>
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+</body>
+</html>

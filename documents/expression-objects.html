@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../css/base.css">
+<title>thymoljs.org documentation : expression objects page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../js/clickthing.js"></script>
+<body>
+  <div th:replace="../fragments::frame(docs='true',level='../')"></div>
+  <div class="content">
+    <h2>expression objects</h2>
+
+<h3>expression basic objects</h3>
+<p>Thymol 2.0 supports all of the Thymeleaf standard dialect Expression Basic Objects, including implementations of all the base objects, 
+web context namespaces for request/session attributes and the web context objects #httpServletRequest and #httpSession. </p>
+<h4>base objects</h4>
+<p>These are #ctx, the top of the Thymol context hierarchy and the major sub-divisions of it's content.</p>
+  <ul>
+    <li>#ctx : the context object.</li>
+    <li>#vars : all the variables in the Context (usually the variables contained in #ctx.variables plus local ones).</li>
+    <li>#root is a synomyn for the same object (#vars).</li>
+    <li>#locale : is not yet supported by Thymol.</li>
+  </ul>
+<h4>web context namespaces</h4>
+<p>These are quick and easy ways to access web context variables.</p>
+  <ul>
+    <li>${param} : for retrieving request parameters.</li>
+    <li>${session} : for retrieving session attributes.</li>
+    <li>${application} : for retrieving application/servlet context attributes.</li>
+  </ul>
+<h4>web context objects</h4>
+<p>These provide equivalents to the familiar JEE web context objects.</p>
+  <ul>
+    <li>#httpServletRequest</li>
+    <li>#httpSession</li>
+  </ul>
+<p>The methods available in each of these objects are limited to those that have meaning in a web client javascript environment.  </p>
+<h3>expression utility objects</h3>
+<p>All Thymeleaf standard dialect Expression Utility Objects are supported by Thymol 2.0. There are implementations equivalent to most methods of each Expression Utility Object, 
+but support for locale related functionality is extremely limited.</p>
+<p>In creating a javascript emulation of a Java framework, it has been necessary to make some compromises with the use of data types associated with the Expression Utility Objects, 
+these are summarised <a href="thymol-types.html">here</a>.</p>
+<h4>utilities</h4>
+<ul>
+    <li>#aggregates</li>
+    <li>#arrays</li>
+    <li>#bools</li>
+    <li>#calendars</li>
+    <li>#dates</li>
+    <li>#ids</li>                                                                                                                                                                                                                                
+    <li>#lists</li>                                                                                                                                                                                                                              
+    <li>#maps</li>                                                                                                                                                                                                                               
+    <li>#messages</li>                                                                                                                                                                                                                           
+    <li>#numbers</li>                                                                                                                                                                                                                            
+    <li>#objects</li>                                                                                                                                                                                                                            
+    <li>#sets</li>                                                                                                                                                                                                                               
+    <li>#strings</li>
+</ul>
+<p>For more information take a look <a href="http://www.thymeleaf.org/doc/html/Using-Thymeleaf.html#appendix-b-expression-utility-objects">here</a>.</p>
+  </div>
+  <div th:replace="../fragments::footer"></div>
+</body>
+</html>

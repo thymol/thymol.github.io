@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../css/base.css">
+<title>thymoljs.org documentation : doc page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../js/clickthing.js"></script>
+<body>
+  <div th:replace="../fragments::frame(docs='true',ctrl='true',level='../')"></div>
+  <div class="content">
+    <h2>control parameters</h2>
+    <p>The are a number of pre-defined javascript variable names that define parameters that may be used to control the way that Thymol behaves when running, these parameters have names the beginning with the prefix &quot;th&quot;.</p>
+    <h3>scalar valued parameters</h3>
+    <ul>
+      <li>thDebug</li>
+      <li>thProtocol</li>
+      <li>thRoot & thPath</li>
+      <li>thAllowNullText</li>
+      <li style="color: grey;">thShowNullOperands has been deprecated</li>
+    </ul>
+    <h3>structure valued parameters</h3>
+    <ul>
+      <li>thMappings</li>
+      <li>thVars</li>
+      <li>thMessages</li>
+      <li>thDisable</li>
+    </ul>
+    <p>The effect of each of these parameters is discussed in the following sections. The way in which they may be defined is discussed here.</p>
+    <p>You may set any of the scalar valued parameters by one of the following mechanisms:</p>
+    <ul>
+      <li>Set them using a javascript element in each template source file.</li>
+      <li>Set them using a javascript element in include javascript source file.</li>
+      <li>Set them as URL parameters on the src attribute of the html script element that defines the Thymol import.</li>
+      <li>Allow them to default!</li>
+    </ul>
+    <p>e.g. The value of thProtocol may be set to &quot;http://&quot; for a particular template using:</p>
+    <pre>
+      <code>&lt;script type=&quot;text/javascript&quot; src=&quot;../../../js/thymol.js&quot; data-thymol-parameters=&quot;thProtocol=http://&quot;&gt;&lt;/script&gt;
+</code>
+    </pre>
+  </div>
+  <div th:replace="../fragments::footer"></div>
+</body>
+</html>

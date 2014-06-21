@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../../css/base.css">
+<title>thymoljs.org documentation : thVars page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../../js/clickthing.js"></script>
+<body>
+  <div th:replace="../../fragments::frame(docs='true',ctrl='true',level='../../')"></div>
+  <div class="content">
+
+    <h2>thVars</h2>
+    <p>There are two ways of defining and initialising Thymol variables, by using request parameters or via javascript declarations.</p>
+    <p>The value of an expression variable may be defined through the use of request parameters attached to the URL by which the static template is invoked.</p>
+    <p>Request parameters are specified by using the usual &quot;http get&quot; mechanism:</p>
+    <pre>
+      <code>file:///C:/Users/jjb/project/big-example/page5.html?firstName=Fred&amp;surName=Bloggs
+</code></pre><p>Thymol allows the definition of variables as structures and name/value pairs using a javascript string array with a json-like syntax.</p>
+    <p>The Thymol variables definition javascript array must be given the identifier &quot;thVars&quot;.</p>
+    <p>Here is an example:</p>
+<pre><code>        var thVars = [
+           ...
+            [ &quot;home&quot;,            &quot;/home/fred&quot; ],
+            [ &quot;home&quot;,            &quot;/home/fred&quot; ],
+            [ &quot;valueIndex&quot;,    345 ],
+            [ &quot;product&quot;,         &quot;#{ &#39;name&#39;: &#39;Lettuce&#39;, &#39;prices&#39;: { &#39;euros&#39;: &#39;9.00&#39;, &#39;dollars&#39;: &#39;12.00&#39; } }&quot; ],
+           ...
+        ];</code></pre><p>This example causes the creation of three Thymol variables.</p>
+    <p>The first is called &quot;home&quot; and has the string value &quot;/home/fred&quot;.</p>
+    <p>The second is called &quot;valueIndex&quot; and has a primitive integer value of 345.</p>
+    <p>The third is an object variable called &quot;product&quot;. The &quot;product&quot; object has two properties, a scalar called &quot;name&quot; and a map called &quot;prices&quot;.</p>
+    <p>The &quot;name&quot; field has a primitive string value of &quot;Lettuce&quot;.</p>
+    <p>The &quot;prices&quot; map comprises two fields: &quot;euros&quot; and &quot;dollars&quot; with values 9.00 and 12.00 respectively.</p>
+    <p>Following their definition, we may refer to these variables in expressions by using the terms &quot;${home}&quot;, &quot;${valueIndex}&quot; or &quot;${product}&quot; respectively.</p>
+    <p>The values of the &quot;product&quot; object&#39;s internal properties may be referenced using the familiar &quot;dot&quot; notation (&quot;${product.prices.euros}&quot; etc ).</p>
+    <p>Alternatively, expressions may refer to properties of the &quot;product&quot; object using the associative-array style as &quot;${product[&#39;name&#39;]}&quot;.</p>
+
+    <h3>collections</h3>
+    <p>Collections are also supported in the thVars structure.</p>
+    <p>To define an array of text values use the following json-like syntax:</p>
+<pre><code>        var thVars = [
+           ...
+            [&quot;types&quot;,            &quot;#[ &#39;Cat&#39;, &#39;Dog&#39;, &#39;Bird&#39;, &#39;Reptile&#39;, &#39;Amphibian&#39; ]&quot;],
+           ...
+        ];</code></pre><p>Thymol collection object members may be referenced using (zero based) index values.</p>
+    <p>For example, with the above thVars definition, the following span should be rendered with the value &quot;Bird&quot;:</p>
+<pre><code>        &lt;span th:text=&quot;${types[2]}&quot;&gt;default&lt;/span&gt;
+</code></pre><p>Thymol collections are most useful for prototyping values to be used in elements with Thymeleaf th:each attributes.</p>
+    <h3>object references</h3>
+    <p>The Thymol thVars structure allows the definition and use of object references in the &quot;style&quot; of OGNL by prefixing the name of the object variable with a single &quot;#&quot; character.</p>
+<pre><code>        var thVars = [
+           ...
+            [&quot;c1&quot;,               &quot;#{ &#39;key&#39;: &#39;Galicia&#39;,    &#39;value&#39;: &#39;Santiago de Compostela&#39; }&quot;],               
+            [&quot;c2&quot;,               &quot;#{ &#39;key&#39;: &#39;Asturias&#39;,    &#39;value&#39;: &#39;Oviedo&#39; }&quot;],               
+            [&quot;c3&quot;,               &quot;#{ &#39;key&#39;: &#39;Cantabria&#39;,    &#39;value&#39;: &#39;Santander&#39; }&quot;],                        
+            [&quot;capitals&quot;,       &quot;#[ #c1, #c2, #c3 ]&quot;],
+            [&quot;data&quot;,            &quot;#{ &#39;regions&#39;: #capitals, &#39;extras&#39;: {} }&quot;,
+           ...
+        ];</code></pre><p>In the above example, we have defined a list of objects called &quot;capitals&quot; that holds three name/value pairs,</p>
+    <p>Thymol object references may be used in the thVars structure wherever a variable name may be used, but not within templates.</p>
+    <p>Thymol object references may be used as URL parameters, but the &quot;#&quot; prefix must be escaped (URL encoded) in order for this to work:</p>
+    <p>e.g.</p>
+    <pre><code>           page5.html?regions=%23capitals&amp;range=%23data</code></pre><h3>expressions</h3>
+    <p>Thymol allows the use of the complete standard dialect expression syntax.</p>
+    <p>The evaluation of boolean expressions is consistent with that of Thymeleaf&#39;s ObjectUtils.evaluateAsBoolean() function.</p>
+
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+</body>
+</html>

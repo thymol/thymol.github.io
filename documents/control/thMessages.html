@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../../css/base.css">
+<title>thymoljs.org documentation : thymol messages page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../../js/clickthing.js"></script>
+<body>
+  <div th:replace="../../fragments::frame(docs='true',ctrl='true',level='../../')"></div>
+  <div class="content">
+    <h2>thMessages</h2>
+    <p>You may use a javascript structure called thMessages to define message values for use in templates:</p>
+<pre>
+  <code>    var thMessages = [
+      ...
+        [&quot;welcome&quot;,          &quot;Welcome to Thymeleaf (with Thymol)!&quot;],
+      ...
+      ];
+  </code></pre><p>and refer to messages so defined by:</p>
+<pre>
+	<code>       &lt;h2 th:text=&quot;#{welcome}&quot;&gt;Welcome!&lt;/h2&gt;
+</code></pre><p>If you wish, you can include parameter place-holders in your messages, you can generate different messages when they are rendered.<p>  
+    <p>For example, if you define:</p>  
+<pre>
+  <code>  var thMessages = [
+      ...
+           ["msg07",    "We went to {1} to meet with {0} and share some {2}."]
+      ...
+    ];
+
+    var thVars = [
+      ...
+           ["var08",    "#['Marie-Antoinette','France','cake']"],                                                           
+           ["var09",    "#['Wallace','62 West Wallaby Street','cheese']"],                                                           
+           ["var10",    "#['Mr. C. Monster','Sesame Street','cookies']"],
+      ...
+    ];
+  </code></pre><p>and refer to these messages in a template, parameterised correctly:</p>
+<pre><code>        &lt;span th:text="${#messages.msgOrNullWithParams('msg07',var08)}"&gt;Some text&lt;/span>&lt;br/&gt;
+        &lt;span th:text="${#messages.msgOrNullWithParams('msg07',var09)}"&gt;Some text&lt;/span>&lt;br/&gt;
+        &lt;span th:text="${#messages.msgOrNullWithParams('msg07',var10)}"&gt;Some text&lt;/span>&lt;br/&gt;
+  </code></pre><p>The result should be something like this:</p>  
+<pre><code>    We went to France to meet with Marie-Antoinette and share some cake.
+    We went to 62 West Wallaby Street to meet with Wallace and share some cheese.
+    We went to Sesame Street to meet with Mr. C. Monster and share some cookies.    
+  </code></pre>    
+    <h3>locales</h3>
+    <p>As of Thymol 2.0 there is no support for locales in Thymol.</p>
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+</body>
+</html>

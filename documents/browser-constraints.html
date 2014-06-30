@@ -23,7 +23,9 @@
     <p>You cannot use th:substituteby to replace the content of the head element of an html file using the Chrome browser, if possible, use th:include instead.</p>
     <h3>internet explorer</h3>
     <p>Local file access is enabled by default by Internet Explorer</p>
-    <p>(Need to take advice on configuring Safari, Opera etc..)</p>
+    <p>There are serious problems with Internet Explorer 11 local file loading using the JQuery 2.1 XHR implementation. You are strongly advised to use JQuery 1.11 until these problems are resolved.
+    <h3>safari, opera etc..</h3>
+    <p>Thymol 2.0 is not tested with recent versions of Safari or Opera. Older versions have worked without problems and no issues have (so far) been raised by users of newer releases.</p>
     <h3>web server</h3>
     <p>None of these restrictions apply to files served via http, so if you&#39;re running into too many problems in a file-system based development you may consider deploying your templates and javascript files on a web server.</p>
   </div>

@@ -2,15 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-                <link rel="stylesheet" href="css/base.css">
-                <title>thymoljs.org homepage</title>
+		<meta name="Keywords" content="thymeleaf,javascript,emulation,template,prototype,templating,prototyping,client-side,simulation,static,offline,stand-alone,local,file-system">
+		<meta name="Description" content="A javascript Thymeleaf prototyping framework.">
+		<link rel="stylesheet" href="css/base.css">
+		<title>thymoljs.org homepage</title>
 	</head>
 	<script th:remove="all" type="text/javascript" src="bower_components/thymol/dist/thymol.min.js" data-thymol-load="js/clickthing.js"></script>
 	<body>
 		<div th:replace="fragments::frame"></div>
- 		<div class="content"> 		
-            <h2>home</h2>
-            <h3>what is thymol?</h3>
+		<div class="content"> 		
+			<h2>home</h2>
+			<h3>what is thymol?</h3>
 			<p>Thymol is a client-side javascript implementation of the popular server-side Thymeleaf Java template engine.</p> 
 			<p>Thymol 2.0 provides the facility to prototype Thymeleaf 2.1 template based designs without having to run a web application server.</p>
 			<p>You don't need to be running tomcat or jetty or any other servlet engine, you can do everything on your local file system or network file server or use a plain old web server (like Apache) if you wish.</p>
@@ -18,13 +20,13 @@
 			<p>Thymol was originally created in order to provide a more accurate static representation of Thymeleaf's dynamic templating capabilities by offering support for Thymeleaf attributes through a statically accessible javascript library.</p>
 			<p>Subsequently Thymol has evolved into a highly capable prototyping system for Thymeleaf based designs.</p>
 			<p>To read more about why Thymol was started see the <a href="static-imports.html">static imports</a> page.</p>
-            <h3>how does it work?</h3>
+			<h3>how does it work?</h3>
 			<p>At the basic level it can be very simple: you add a single script tag to your Thymeleaf template and load that template directly into your browser.</p>
 			<p>To enhance the scope of your prototype you will probably want to add example data, you do this by creating javascript files to configure and/or extend Thymol.</p>
 			<p>With Thymol version 2.0 and above, you can easily write javascript to prototype custom Thymeleaf dialects!</p> 
-            <h3>what about the name?</h3>
-            <p>Thymol is the informal name of the organic molecule 2-isopropyl-5-methylphenol, this chemical provides most of the flavour of the thyme leaf.</p>
- 		</div>
+			<h3>what about the name?</h3>
+			<p>Thymol is the informal name of the organic molecule 2-isopropyl-5-methylphenol, this chemical provides most of the flavour of the thyme leaf.</p>
+		</div>
 		<div th:replace="fragments::footer"></div>
 	</body>
 </html>

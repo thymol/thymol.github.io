@@ -11,42 +11,54 @@
   <div class="content">
     <h2>thMessages</h2>
     <p>You may use a javascript structure called thMessages to define message values for use in templates:</p>
-<pre>
-  <code>    var thMessages = [
-      ...
-        [&quot;welcome&quot;,          &quot;Welcome to Thymeleaf (with Thymol)!&quot;],
-      ...
-      ];
-  </code></pre><p>and refer to messages so defined by:</p>
-<pre>
-	<code>       &lt;h2 th:text=&quot;#{welcome}&quot;&gt;Welcome!&lt;/h2&gt;
-</code></pre><p>If you wish, you can include parameter place-holders in your messages, you can generate different messages when they are rendered.<p>  
+<pre><code>        var thMessages = [
+           ...
+            [&quot;welcome&quot;,          &quot;Welcome to Thymeleaf (with Thymol)!&quot;],
+           ...
+        ];
+</code></pre><p>and refer to messages so defined by:</p>
+<pre><code>        &lt;h2 th:text=&quot;#{welcome}&quot;&gt;Welcome!&lt;/h2&gt;
+</code></pre><p>If you include parameter place-holders in your messages, you can control message content in the usual way.<p>  
     <p>For example, if you define:</p>  
-<pre>
-  <code>  var thMessages = [
-      ...
-           ["msg07",    "We went to {1} to meet with {0} and share some {2}."]
-      ...
-    ];
+<pre><code>        var thMessages = [
+           ...
+            ["msg07",    "We went to {1} to meet with {0} and share some {2}."]
+           ...
+        ];
 
-    var thVars = [
-      ...
-           ["var08",    "#['Marie-Antoinette','France','cake']"],                                                           
-           ["var09",    "#['Wallace','62 West Wallaby Street','cheese']"],                                                           
-           ["var10",    "#['Mr. C. Monster','Sesame Street','cookies']"],
-      ...
-    ];
-  </code></pre><p>and refer to these messages in a template, parameterised correctly:</p>
+        var thVars = [
+           ...
+            ["var08",    "#['Marie-Antoinette','France','cake']"],                                                           
+            ["var09",    "#['Wallace','62 West Wallaby Street','cheese']"],                                                           
+            ["var10",    "#['Mr. C. Monster','Sesame Street','cookies']"],
+           ...
+        ];
+</code></pre><p>and refer to these messages in a template, parameterised correctly:</p>
 <pre><code>        &lt;span th:text="${#messages.msgOrNullWithParams('msg07',var08)}"&gt;Some text&lt;/span>&lt;br/&gt;
         &lt;span th:text="${#messages.msgOrNullWithParams('msg07',var09)}"&gt;Some text&lt;/span>&lt;br/&gt;
         &lt;span th:text="${#messages.msgOrNullWithParams('msg07',var10)}"&gt;Some text&lt;/span>&lt;br/&gt;
-  </code></pre><p>The result should be something like this:</p>  
-<pre><code>    We went to France to meet with Marie-Antoinette and share some cake.
-    We went to 62 West Wallaby Street to meet with Wallace and share some cheese.
-    We went to Sesame Street to meet with Mr. C. Monster and share some cookies.    
-  </code></pre>    
+</code></pre><p>The result should be something like this:</p>  
+<pre><code>        We went to France to meet with Marie-Antoinette and share some cake.
+        We went to 62 West Wallaby Street to meet with Wallace and share some cheese.
+        We went to Sesame Street to meet with Mr. C. Monster and share some cookies.    
+</code></pre>    
     <h3>locales</h3>
-    <p>As of Thymol 2.0 there is no support for locales in Thymol.</p>
+    <p>Thymol 2.0 introduces support for locales in message processing. Adding a group of messages to be used for a specific locale is simple, all you need to do is add a thMessages assignment with the given locale as it's array specifier.</p>
+
+    <p>For example, if you have a message group like this:</p>
+<pre><code>        var thMessages = [
+                  ["msg01",    "Hello!"],
+                  ["msg02",    "Hello {0}!"],
+                  ["msg03",    "Hello {0}, welcome to planet {1}!"],
+                  ["msg04",    "Hello {0}, good evening and welcome to planet {1}!"]
+          ];
+</code></pre><p>You can easily add US specific variants like this:</p>    
+<pre><code>        thMessages["en_US"] = [
+                  ["msg01",    "Howdy!"],
+                  ["msg02",    "Howdy {0}!"],
+                  ["msg03",    "Howdy {0}, welcome to planet {1}!"]            
+          ];
+</code></pre>    
   </div>
   <div th:replace="../../fragments::footer"></div>
 </body>

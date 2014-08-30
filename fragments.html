@@ -16,11 +16,13 @@
       <div id="margin2" th:if="${docs}" th:with="path='documents/',link=${level+path}">
         <div><a th:with="html='thymol-files.html'" th:href="${level}?${link+html}:${path+html}">thymol files</a></div>
         <div><a th:with="html='configuration.html'" th:href="${level}?${link+html}:${path+html}">configuration</a></div>
+        <div><a th:with="html='messages.html'" th:href="${level}?${link+html}:${path+html}">message resources</a></div>
         <div><a th:with="html='control-parameters.html'" th:href="${level}?${link+html}:${path+html}" th:onclick="${clkDocs}">control parameters</a></div>
         <div id="margin3" th:if="${docs and ctrl}" th:with="path=${path+'control/'},link=${level+path}">
           <div><a th:with="html='thDebug.html'" th:href="${level}?${link+html}:${path+html}">thDebug</a></div>
           <div><a th:with="html='thProtocol.html'" th:href="${level}?${link+html}:${path+html}">thProtocol</a></div>
           <div><a th:with="html='thRoot-and-thPath.html'" th:href="${level}?${link+html}:${path+html}">thRoot &amp; thPath</a></div>
+          <div><a th:with="html='thMessagePath.html'" th:href="${level}?${link+html}:${path+html}">thMessagePath</a></div>
           <div><a th:with="html='thAllowNullText.html'" th:href="${level}?${link+html}:${path+html}">thAllowNullText</a></div>
           <div><a th:with="html='thMappings.html'" th:href="${level}?${link+html}:${path+html}">thMappings</a></div>
           <div><a th:with="html='thVars.html'" th:href="${level}?${link+html}:${path+html}">thVars</a></div>
@@ -58,7 +60,7 @@
       <div><a th:href="${level}?${level+'issues.html'}:'issues.html'" th:onclick="${clkIndx}">issues</a></div>
       <div id="margin2" th:if="${issu}" th:with="path='issues/',link=${level+path}">
         <div><a th:with="html='known-issues.html'" th:href="${level}?${link+html}:${path+html}">known issues</a></div>
-        <div><a href="https://github.com/thymol/thymol.js/issues">new issue</a></div>
+        <div><a href="https://github.com/thymol/thymol.js/issues">create new issue</a></div>
       </div>
       <div><a href="http://www.thymeleaf.org">thymeleaf</a></div>
     </div>

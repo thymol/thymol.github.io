@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../css/base.css">
+<title>thymoljs.org documentation : message resources page</title>
+</head>
+<script th:remove="all" type="text/javascript" src="../bower_components/thymol/dist/thymol.min.js" data-thymol-load="../js/clickthing.js"></script>
+<body>
+  <div th:replace="../fragments::frame(docs='true',level='../')"></div>
+  <div class="content">
+    <h2>message resources</h2>
+    <h3>properties files</h3>
+    <p>Starting with version 2.0.0 Thymol supports the use of properties files as message resources. The messages are stored as "key=value" pairs and parameter place-holder values ("{N}") may be defined in the usual way.</p>
+    <p>Thymol attempts to apply the same order of discovery and processing to message resources as Thymeleaf does.
+    <p>In the first instance, Thymol expects to find messages for a template in .properties files in the same folder and with the same name as the template itself but (potentially) with a suffix derived from the (browser) environment defined locale.</p>
+    <h3>message resolver</h3>
+    <p>If a message resource can't be found in the properties files in the template's directory then Thymol attempts to find this message by searching through properties files in a specified messages directory. These "default" properties files have a base file name "Messages" and (potentially) a file name suffix derived from the (browser) environment defined locale.</p>
+    <p>This specified default messages directory is defined by a Thymol control parameter named "thMessagePath" (see <a href="control/thMessagePath.html">here</a>).
+  </div>
+  <div th:replace="../fragments::footer"></div>
+</body>
+</html>

@@ -20,7 +20,7 @@ web context namespaces for request/session attributes and the web context object
     <li>#ctx : the context object.</li>
     <li>#vars : all the variables in the Context (usually the variables contained in #ctx.variables plus local ones).</li>
     <li>#root is a synomyn for the same object (#vars).</li>
-    <li>#locale : is not yet supported by Thymol.</li>
+    <li>#locale : returns the Thymol locale object.</li>
   </ul>
 <h4>web context namespaces</h4>
 <p>These are quick and easy ways to access web context variables.</p>
@@ -57,7 +57,7 @@ these are summarised <a href="thymol-types.html">here</a>.</p>
     <li>#sets</li>                                                                                                                                                                                                                               
     <li>#strings</li>
 </ul>
-<p>For more information take a look <a href="http://www.thymeleaf.org/doc/html/Using-Thymeleaf.html#appendix-b-expression-utility-objects">here</a>.</p>
+<p>For more information take a look <a href="http://www.thymeleaf.org/doc/usingthymeleaf.html#appendix-b-expression-utility-objects">here</a>.</p>
   </div>
   <div th:replace="../fragments::footer"></div>
 </body>

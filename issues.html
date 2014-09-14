@@ -1,19 +1,17 @@
+---
+title: thymoljs.org documentation &#58; thymol issues page
+---
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-                <link rel="stylesheet" href="css/base.css">
-                <title>thymoljs.org issues page</title>
-	</head>
-	<script th:remove="all" type="text/javascript" src="bower_components/thymol/dist/thymol.min.js" data-thymol-load="js/clickthing.js"></script>
-	<body>
-		<div th:replace="fragments::frame(issu='true')"></div>
- 		<div class="content"> 		
- 		  <h2>issues</h2>
-          <p>As with all software, users of Thymol will encounter problems. Some problems are well known and ongoing, some will be new and easily remedied. Most fall somewhere in between.</p>
-          <p>You can review the well known and ongoing Thymol issues on the <a href="issues/known-issues.html">&quot;known issues&quot;</a> page. 
-		  <p>To formally report new issues or potential defects or to review progress on fixes please visit the <a href="https://github.com/thymol/thymol.js/issues">issues reporting site</a></p>
- 		</div>
-		<div th:replace="fragments::footer"></div>
-	</body>
+{% include header-section.html level="" %}
+<body>
+	<div th:replace="fragments::frame(issu='true')"></div>
+	<div class="content"> 		
+	  <h2>issues</h2>
+        <p>As with all software, users of Thymol will encounter problems. Some problems are well known and ongoing, some will be new and easily remedied. Most fall somewhere in between.</p>
+        <p>You can review the well known and ongoing Thymol issues on the <a href="issues/known-issues.html">&quot;known issues&quot;</a> page. 
+	  <p>To formally report new issues or potential defects or to review progress on fixes please visit the <a href="https://github.com/thymol/thymol.js/issues">issues reporting site</a></p>
+	</div>
+	<div th:replace="fragments::footer"></div>
+</body>
 </html>

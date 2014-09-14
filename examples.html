@@ -1,37 +1,35 @@
+---
+title: thymoljs.org documentation &#58; thymol examples page
+---
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-                <link rel="stylesheet" href="css/base.css">
-                <title>thymoljs.org examples page</title>
-	</head>
-	<script th:remove="all" type="text/javascript" src="bower_components/thymol/dist/thymol.min.js" data-thymol-load="js/clickthing.js"></script>
-	<body>
-		<div th:replace="fragments::frame(exms='true')"></div>
- 		<div class="content"> 		
- 		  <h2>examples</h2>
+{% include header-section.html level="" %}
+<body>
+	<div th:replace="fragments::frame(exms='true')"></div>
+	<div class="content"> 		
+	  <h2>examples</h2>
 
-			<p>There are a number of new examples of Thymol usage in the 2.0
-				distribution download file (from <a href="http://sourceforge.net/projects/thymol/">sourceforge</a>).</p>
-				
-			<p>You can see some of these examples in action by trying the following links:</p>
-				
-			<ul>
-				<li><a href="examples/templates/thymol/2.0/sessions/session-page-01.html">sessions</a> the persistent session examples in the
-					examples/templates/thymol/2.0/sessions directory.</li><br/>
-				<li><a href="examples/templates/thymol/2.0/say-hello/sayhello.html">say-hello</a> the extending Thymeleaf in 5 minutes example (Thymol style)
-					in the examples/templates/thymol/2.0/say-hello directory.</li><br/>
-				<li><a href="examples/templates/v21/stsm/stsm3.html">stsm example</a> the extending Thymol to implement some Thymeleaf + Spring
-					examples in the examples/templates/v21/stsm directory.</li><br/>
-				<li><a href="examples/templates/v21/ecosystem/with-dialect/with-example1.html">with-dialect</a> a Thymol version of antibrumm&#39;s
-					thymeleaf-extras-with-dialect in the
-					examples/templates/v21/ecosystem/with-dialect directory.</li><br/>
-				<li><a href="examples/templates/v21/extrathyme/webapp/WEB-INF/templates/extrathyme.html">extrathyme</a> a Thymol version of the extrathyme custom dialect example in
-					the examples/templates/v21/extrathyme/ directory.</li><br/>
-                <li><a href="index.html">this site</a> the site you're currently browsing uses Thymol 2.0. Download it <a href="https://github.com/thymol/thymol.github.io/archive/master.zip">here</a>.</li>
-			</ul>
+		<p>There are a number of new examples of Thymol usage in the 2.0
+			distribution download file (from <a href="http://sourceforge.net/projects/thymol/">sourceforge</a>).</p>
+			
+		<p>You can see some of these examples in action by trying the following links:</p>
+			
+		<ul>
+			<li><a href="examples/templates/thymol/2.0/sessions/session-page-01.html">sessions</a> the persistent session examples in the
+				examples/templates/thymol/2.0/sessions directory.</li><br/>
+			<li><a href="examples/templates/thymol/2.0/say-hello/sayhello.html">say-hello</a> the extending Thymeleaf in 5 minutes example (Thymol style)
+				in the examples/templates/thymol/2.0/say-hello directory.</li><br/>
+			<li><a href="examples/templates/v21/stsm/stsm3.html">stsm example</a> the extending Thymol to implement some Thymeleaf + Spring
+				examples in the examples/templates/v21/stsm directory.</li><br/>
+			<li><a href="examples/templates/v21/ecosystem/with-dialect/with-example1.html">with-dialect</a> a Thymol version of antibrumm&#39;s
+				thymeleaf-extras-with-dialect in the
+				examples/templates/v21/ecosystem/with-dialect directory.</li><br/>
+			<li><a href="examples/templates/v21/extrathyme/webapp/WEB-INF/templates/extrathyme.html">extrathyme</a> a Thymol version of the extrathyme custom dialect example in
+				the examples/templates/v21/extrathyme/ directory.</li><br/>
+              <li><a href="index.html">this site</a> the site you're currently browsing uses Thymol 2.0. Download it <a href="https://github.com/thymol/thymol.github.io/archive/master.zip">here</a>.</li>
+		</ul>
 
- 		</div>
-		<div th:replace="fragments::footer"></div>
-	</body>
+	</div>
+	<div th:replace="fragments::footer"></div>
+</body>
 </html>

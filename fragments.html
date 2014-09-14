@@ -9,44 +9,44 @@
 <body>
   <div th:fragment="frame(docs)">
     <div class="margin" th:with="levelIndx=${level}?${level+'index.html'}:'index.html',clkIndx='clickthing(this,\''+${levelIndx}+'\')',levelDocs=${level}?${level+'documentation.html'}:'documentation.html',clkDocs='clickthing(this,\''+${levelDocs}+'\')'">
-    <div><a th:href="${level}?${level+'index.html'}:'index.html'">home</a></div>
-      <div><a th:href="${level}?${level+'features.html'}:'features.html'">features</a></div>
-      <div><a th:href="${level}?${level+'download.html'}:'download.html'">download</a></div>
-      <div><a th:href="${level}?${level+'documentation.html'}:'documentation.html'" th:onclick="${clkIndx}">documentation</a></div>
+    <div><a href="index.html" th:href="${level}?${level+'index.html'}:'index.html'">home</a></div>
+      <div><a href="features.html" th:href="${level}?${level+'features.html'}:'features.html'">features</a></div>
+      <div><a href="download.html" th:href="${level}?${level+'download.html'}:'download.html'">download</a></div>
+      <div><a href="documentation.html" th:href="${level}?${level+'documentation.html'}:'documentation.html'" th:onclick="${clkIndx}">documentation</a></div>
       <div id="margin2" th:if="${docs}" th:with="path='documents/',link=${level+path}">
-        <div><a th:with="html='thymol-files.html'" th:href="${level}?${link+html}:${path+html}">thymol files</a></div>
-        <div><a th:with="html='configuration.html'" th:href="${level}?${link+html}:${path+html}">configuration</a></div>
-        <div><a th:with="html='messages.html'" th:href="${level}?${link+html}:${path+html}">message resources</a></div>
-        <div><a th:with="html='control-parameters.html'" th:href="${level}?${link+html}:${path+html}" th:onclick="${clkDocs}">control parameters</a></div>
+        <div><a href="documentation/thymol-files.html" th:with="html='thymol-files.html'" th:href="${level}?${link+html}:${path+html}">thymol files</a></div>
+        <div><a href="documentation/configuration.html" th:with="html='configuration.html'" th:href="${level}?${link+html}:${path+html}">configuration</a></div>
+        <div><a href="documentation/messages.html" th:with="html='messages.html'" th:href="${level}?${link+html}:${path+html}">message resources</a></div>
+        <div><a href="documentation/thymol-files.html" th:with="html='control-parameters.html'" th:href="${level}?${link+html}:${path+html}" th:onclick="${clkDocs}">control parameters</a></div>
         <div id="margin3" th:if="${docs and ctrl}" th:with="path=${path+'control/'},link=${level+path}">
-          <div><a th:with="html='thDebug.html'" th:href="${level}?${link+html}:${path+html}">thDebug</a></div>
-          <div><a th:with="html='thProtocol.html'" th:href="${level}?${link+html}:${path+html}">thProtocol</a></div>
-          <div><a th:with="html='thRoot-and-thPath.html'" th:href="${level}?${link+html}:${path+html}">thRoot &amp; thPath</a></div>
-          <div><a th:with="html='thMessagePath.html'" th:href="${level}?${link+html}:${path+html}">thMessagePath</a></div>
-          <div><a th:with="html='thAllowNullText.html'" th:href="${level}?${link+html}:${path+html}">thAllowNullText</a></div>
-          <div><a th:with="html='thMappings.html'" th:href="${level}?${link+html}:${path+html}">thMappings</a></div>
-          <div><a th:with="html='thVars.html'" th:href="${level}?${link+html}:${path+html}">thVars</a></div>
-          <div><a th:with="html='thMessages.html'" th:href="${level}?${link+html}:${path+html}">thMessages</a></div>
-          <div><a th:with="html='thDisable.html'" th:href="${level}?${link+html}:${path+html}">thDisable</a></div>
+          <div><a href="index.html" th:with="html='thDebug.html'" th:href="${level}?${link+html}:${path+html}">thDebug</a></div>
+          <div><a href="index.html" th:with="html='thProtocol.html'" th:href="${level}?${link+html}:${path+html}">thProtocol</a></div>
+          <div><a href="index.html" th:with="html='thRoot-and-thPath.html'" th:href="${level}?${link+html}:${path+html}">thRoot &amp; thPath</a></div>
+          <div><a href="index.html" th:with="html='thMessagePath.html'" th:href="${level}?${link+html}:${path+html}">thMessagePath</a></div>
+          <div><a href="index.html" th:with="html='thAllowNullText.html'" th:href="${level}?${link+html}:${path+html}">thAllowNullText</a></div>
+          <div><a href="index.html" th:with="html='thMappings.html'" th:href="${level}?${link+html}:${path+html}">thMappings</a></div>
+          <div><a href="index.html" th:with="html='thVars.html'" th:href="${level}?${link+html}:${path+html}">thVars</a></div>
+          <div><a href="index.html" th:with="html='thMessages.html'" th:href="${level}?${link+html}:${path+html}">thMessages</a></div>
+          <div><a href="index.html" th:with="html='thDisable.html'" th:href="${level}?${link+html}:${path+html}">thDisable</a></div>
         </div>
-        <div><a th:with="html='browser-constraints.html'" th:href="${level}?${link+html}:${path+html}">browser constraints</a></div>
-        <div><a th:with="html='expression-objects.html'" th:href="${level}?${link+html}:${path+html}">expression objects</a></div>
-        <div><a th:with="html='thymol-types.html'" th:href="${level}?${link+html}:${path+html}">thymol types</a></div>
-        <div><a th:with="html='thymol-api.html'" th:href="${level}?${link+html}:${path+html}" th:onclick="${clkDocs}">thymol API</a></div>
+        <div><a href="index.html" th:with="html='browser-constraints.html'" th:href="${level}?${link+html}:${path+html}">browser constraints</a></div>
+        <div><a href="index.html" th:with="html='expression-objects.html'" th:href="${level}?${link+html}:${path+html}">expression objects</a></div>
+        <div><a href="index.html" th:with="html='thymol-types.html'" th:href="${level}?${link+html}:${path+html}">thymol types</a></div>
+        <div><a href="index.html" th:with="html='thymol-api.html'" th:href="${level}?${link+html}:${path+html}" th:onclick="${clkDocs}">thymol API</a></div>
         <div id="margin3" th:if="${docs and apis}" th:with="path=${path+'apis/'},link=${level+path}">
-          <div><a th:with="html='properties.html'" th:href="${level}?${link+html}:${path+html}">properties</a></div>
-          <div><a th:with="html='functions.html'" th:href="${level}?${link+html}:${path+html}">functions</a></div>
-          <div><a th:with="html='execution-order.html'" th:href="${level}?${link+html}:${path+html}">execution order</a></div>
+          <div><a href="index.html" th:with="html='properties.html'" th:href="${level}?${link+html}:${path+html}">properties</a></div>
+          <div><a href="index.html" th:with="html='functions.html'" th:href="${level}?${link+html}:${path+html}">functions</a></div>
+          <div><a href="index.html" th:with="html='execution-order.html'" th:href="${level}?${link+html}:${path+html}">execution order</a></div>
         </div>
         <div><a th:with="html='thymol-extensions.html'" th:href="${level}?${link+html}:${path+html}" th:onclick="${clkDocs}">thymol extensions</a></div>
         <div id="margin3" th:if="${docs and extn}" th:with="path=${path+'extensions/'},link=${level+path}">
-          <div><a th:with="html='attributes.html'" th:href="${level}?${link+html}:${path+html}">attributes</a></div>
-          <div><a th:with="html='elements.html'" th:href="${level}?${link+html}:${path+html}">elements</a></div>
-          <div><a th:with="html='expression-objects.html'" th:href="${level}?${link+html}:${path+html}">expression objects</a></div>
-          <div><a th:with="html='dialects.html'" th:href="${level}?${link+html}:${path+html}">dialects</a></div>
+          <div><a href="index.html" th:with="html='attributes.html'" th:href="${level}?${link+html}:${path+html}">attributes</a></div>
+          <div><a href="index.html" th:with="html='elements.html'" th:href="${level}?${link+html}:${path+html}">elements</a></div>
+          <div><a href="index.html" th:with="html='expression-objects.html'" th:href="${level}?${link+html}:${path+html}">expression objects</a></div>
+          <div><a href="index.html" th:with="html='dialects.html'" th:href="${level}?${link+html}:${path+html}">dialects</a></div>
         </div>
       </div>
-      <div><a th:href="${level}?${level+'examples.html'}:'examples.html'" th:onclick="${clkIndx}">examples</a></div>
+      <div><a href="examples.html" th:href="${level}?${level+'examples.html'}:'examples.html'" th:onclick="${clkIndx}">examples</a></div>
       <div id="margin2" th:if="${exms}">
         <div><a href="examples/templates/thymol/2.0/sessions/session-page-01.html">sessions</a></div>
         <div><a href="examples/templates/thymol/2.0/say-hello/sayhello.html">say-hello</a></div>
@@ -54,9 +54,9 @@
         <div><a href="examples/templates/v21/ecosystem/with-dialect/with-example1.html">with-dialect</a></div>
         <div><a href="examples/templates/v21/extrathyme/webapp/WEB-INF/templates/extrathyme.html">extrathyme</a></div>
       </div>
-      <div><a th:href="${level}?${level+'news.html'}:'news.html'">news</a></div>
-      <div><a th:href="${level}?${level+'credits.html'}:'credits.html'">credits</a></div>
-      <div><a href="http://forum.thymoljs.org/">user forum</a></div>
+      <div><a href="news.html" th:href="${level}?${level+'news.html'}:'news.html'">news</a></div>
+      <div><a href="credits.html" th:href="${level}?${level+'credits.html'}:'credits.html'">credits</a></div>
+      <div><a href="index.html" href="http://forum.thymoljs.org/">user forum</a></div>
       <div><a th:href="${level}?${level+'issues.html'}:'issues.html'" th:onclick="${clkIndx}">issues</a></div>
       <div id="margin2" th:if="${issu}" th:with="path='issues/',link=${level+path}">
         <div><a th:with="html='known-issues.html'" th:href="${level}?${link+html}:${path+html}">known issues</a></div>

@@ -1,16 +1,13 @@
+---
+title: thymoljs.org documentation &#58; thymol static imports page
+---
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-                <link rel="stylesheet" href="css/base.css">
-                <title>thymoljs.org static imports page</title>
-	</head>
-	<script th:remove="all" type="text/javascript" src="bower_components/thymol/dist/thymol.min.js" data-thymol-load="js/clickthing.js"></script>
-	<body>
-		<div th:replace="fragments::frame(docs='true')"></div>
- 		<div class="content"> 		
- 		  <h2>static imports</h2>
-
+{% include header-section.html level="" %}
+<body>
+<div th:replace="fragments::frame(docs='true')"></div>
+<div class="content"> 		
+<h2>static imports</h2>
 <p>One way to work with include(d) content in Thymeleaf is to use the &quot;iframe body&quot; technique, this uses an html <code>&lt;iframe&gt;</code> element as the static content (body) of all document elements with th:include.</p>
 <pre><code>  &lt;!-- iframe example --&gt;
   &lt;p th:include=&quot;./frames/menu::menu&quot; &gt;
@@ -106,9 +103,7 @@
   &lt;/html&gt;
 </code></pre><p>When the Thymol enhanced page is rendered we find that the nested styles are applied to the imported content as intended!</p>
 <p><img src="img/thymol-view.jpg" alt="thymol-view"></p>
-
-
- 		</div>
-		<div th:replace="fragments::footer"></div>
-	</body>
+</div>
+<div th:replace="fragments::footer"></div>
+</body>
 </html>

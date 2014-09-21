@@ -1,0 +1,59 @@
+	<div class="margin">
+		<div><a href="{{ include.level }}index.html" target="_top">home</a></div>
+		<div><a href="{{ include.level }}features.html" target="_top">features</a></div>
+		<div><a href="{{ include.level }}download.html" target="_top">download</a></div>
+		<div><a href="{{ include.level }}documentation.html" th:href="'{{ include.level }}documentation.html'+${!docu}?'?docu':''" target="_top">documentation</a></div>
+		<div id="margin2" th:if="${docu}">
+			<div><a href="{{ include.level }}documents/thymol-files.html" th:href="'{{ include.level }}documents/thymol-files.html?docu'" target="_top">thymol files</a></div>
+			<div><a href="{{ include.level }}documents/configuration.html" th:href="'{{ include.level }}documents/configuration.html?docu'" target="_top">configuration</a></div>
+			<div><a href="{{ include.level }}documents/messages.html" th:href="'{{ include.level }}documents/messages.html?docu'" target="_top">message resources</a></div>
+			<div><a href="{{ include.level }}documents/control-parameters.html" th:href="${!para}?'{{ include.level }}documents/control-parameters.html?docu&amp;para':'{{ include.level }}documentation.html?docu'" target="_top">control parameters</a></div>
+			<div id="margin3" th:if="${docu and para}">
+				<div><a href="{{ include.level }}documents/control/thDebug.html" th:href="'{{ include.level }}documents/control/thDebug.html?docu&amp;para'" target="_top">thDebug</a></div>
+				<div><a href="{{ include.level }}documents/control/thProtocol.html" th:href="'{{ include.level }}documents/control/thProtocol.html?docu&amp;para'" target="_top">thProtocol</a></div>
+				<div><a href="{{ include.level }}documents/control/thRoot-and-thPath.html" th:href="'{{ include.level }}documents/control/thRoot-and-thPath.html?docu&amp;para'" target="_top">thRoot &amp; thPath</a></div>
+				<div><a href="{{ include.level }}documents/control/thMessagePath.html" th:href="'{{ include.level }}documents/control/thMessagePath.html?docu&amp;para'" target="_top">thMessagePath</a></div>
+				<div><a href="{{ include.level }}documents/control/thAllowNullText.html" th:href="'{{ include.level }}documents/control/thAllowNullText.html?docu&amp;para'" target="_top">thAllowNullText</a></div>
+				<div><a href="{{ include.level }}documents/control/thMappings.html" th:href="'{{ include.level }}documents/control/thMappings.html?docu&amp;para'" target="_top">thMappings</a></div>
+				<div><a href="{{ include.level }}documents/control/thVars.html" th:href="'{{ include.level }}documents/control/thVars.html?docu&amp;para'" target="_top">thVars</a></div>
+				<div><a href="{{ include.level }}documents/control/thMessages.html" th:href="'{{ include.level }}documents/control/thMessages.html?docu&amp;para'" target="_top">thMessages</a></div>
+				<div><a href="{{ include.level }}documents/control/thDisable.html" th:href="'{{ include.level }}documents/control/thDisable.html?docu&amp;para'" target="_top">thDisable</a></div>
+			</div>
+			<div><a href="{{ include.level }}documents/browser-constraints.html" th:href="'{{ include.level }}documents/browser-constraints.html?docu'" target="_top">browser constraints</a></div>
+			<div><a href="{{ include.level }}documents/expression-objects.html" th:href="'{{ include.level }}documents/expression-objects.html?docu'" target="_top">expression objects</a></div>
+			<div><a href="{{ include.level }}documents/thymol-types.html" th:href="'{{ include.level }}documents/thymol-types.html?docu'" target="_top">thymol types</a></div>
+			<div><a href="{{ include.level }}documents/thymol-api.html" th:href="${!apis}?'{{ include.level }}documents/thymol-api.html?docu&amp;apis':'{{ include.level }}documentation.html?docu'" target="_top">thymol API</a></div>
+			<div id="margin3" th:if="${docu and apis}">
+				<div><a href="{{ include.level }}documents/apis/properties.html" th:href="'{{ include.level }}documents/apis/properties.html?docu&amp;apis'" target="_top">properties</a></div>
+				<div><a href="{{ include.level }}documents/apis/functions.html" th:href="'{{ include.level }}documents/apis/functions.html?docu&amp;apis'" target="_top">functions</a></div>
+				<div><a href="{{ include.level }}documents/apis/execution-order.html" th:href="'{{ include.level }}documents/apis/execution-order.html?docu&amp;apis'" target="_top">execution order</a></div>
+			</div>
+			<div><a href="{{ include.level }}documents/thymol-extensions.html" th:href="${!exte}?'{{ include.level }}documents/thymol-extensions.html?docu&amp;exte':'{{ include.level }}documentation.html?docu'" target="_top">thymol extensions</a></div>
+			<div id="margin3" th:if="${docu and exte}">
+				<div><a href="{{ include.level }}documents/extensions/attributes.html" th:href="'{{ include.level }}documents/extensions/attributes.html?docu&amp;exte'" target="_top">attributes</a></div>
+				<div><a href="{{ include.level }}documents/extensions/elements.html" th:href="'{{ include.level }}documents/extensions/elements.html?docu&amp;exte'" target="_top">elements</a></div>
+				<div><a href="{{ include.level }}documents/extensions/expression-objects.html" th:href="'{{ include.level }}documents/extensions/expression-objects.html?docu&amp;exte'" target="_top">expression objects</a></div>
+				<div><a href="{{ include.level }}documents/extensions/dialects.html" th:href="'{{ include.level }}documents/extensions/dialects.html?docu&amp;exte'" target="_top">dialects</a></div>
+			</div>
+		</div>
+		<div><a href="{{ include.level }}examples.html" th:href="'{{ include.level }}examples.html'+${!exam}?'?exam':''" target="_top">examples</a></div>
+		<div id="margin2" th:if="${exam}">
+		      <div><a href="{{ include.level }}examples/templates/thymol/2.0/sessions/session-page-01.html" target="_top">sessions</a></div>
+		      <div><a href="{{ include.level }}examples/templates/thymol/2.0/say-hello/sayhello.html" target="_top">say-hello</a></div>
+		      <div><a href="{{ include.level }}examples/templates/v21/stsm/stsm3.html" target="_top">stsm example</a></div>
+		      <div><a href="{{ include.level }}examples/templates/v21/ecosystem/with-dialect/with-example1.html" target="_top">with-dialect</a></div>
+		      <div><a href="{{ include.level }}examples/templates/v21/extrathyme/webapp/WEB-INF/templates/extrathyme.html" target="_top">extrathyme</a></div>
+		</div>
+		<div><a href="{{ include.level }}news.html" target="_top">news</a></div>
+		<div><a href="{{ include.level }}credits.html" target="_top">credits</a></div>
+		<div><a href="http://forum.thymoljs.org/" target="_top">user forum</a></div>
+		<div><a href="{{ include.level }}issues.html" th:href="'{{ include.level }}issues.html'+${!issu}?'?issu':''" target="_top">issues</a></div>
+		<div id="margin2" th:if="${issu}">
+			<div><a href="{{ include.level }}issues/known-issues.html" th:href="'{{ include.level }}issues/known-issues.html?issu'" target="_top">known issues</a></div>
+			<div><a href="https://github.com/thymol/thymol.js/issues" target="_top">create new issue</a></div>
+		</div>
+		<div><a href="http://www.thymeleaf.org" target="_top">thymeleaf</a></div>
+	</div>
+	<h1>
+		thymol<span style="color: #dc0808;">js</span>
+	</h1>

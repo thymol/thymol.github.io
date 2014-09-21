@@ -1,11 +1,12 @@
 ---
-title: thymoljs.org documentation &#58; thymol message resources page
+title: Thymol Message Resources
+description: Describes Thymol message resource definition
 ---
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 {% include header-section.html level="../" %}
 <body>
-  <div th:replace="../fragments::frame(docs='true',level='../')"></div>
+{% include common-section.html level="../" %}
   <div class="content">
     <h2>message resources</h2>
     <h3>properties files</h3>
@@ -14,7 +15,7 @@ title: thymoljs.org documentation &#58; thymol message resources page
     <p>In the first instance, Thymol expects to find messages for a template in .properties files in the same folder and with the same name as the template itself but (potentially) with a suffix derived from the (browser) environment defined locale.</p>
     <h3>message resolver</h3>
     <p>If a message resource can't be found in the properties files in the template's directory then Thymol attempts to find this message by searching through properties files in a specified messages directory. These "default" properties files have a base file name "Messages" and (potentially) a file name suffix derived from the (browser) environment defined locale.</p>
-    <p>This specified default messages directory is defined by a Thymol control parameter named "thMessagePath" (see <a href="control/thMessagePath.html">here</a>).
+    <p>This specified default messages directory is defined by a Thymol control parameter named "thMessagePath" (see <a href="control/thMessagePath.html" th:href="'control/thMessagePath.html?docu&amp;para'">here</a>).
   </div>
   <div th:replace="../fragments::footer"></div>
 </body>

@@ -1,11 +1,12 @@
 ---
-title: thymoljs.org documentation &#58; thymol expression objects page
+title: Thymol Expression Objects
+description: Describes Thymol expression objects
 ---
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 {% include header-section.html level="../" %}
 <body>
-  <div th:replace="../fragments::frame(docs='true',level='../')"></div>
+{% include common-section.html level="../" %}
   <div class="content">
     <h2>expression objects</h2>
 
@@ -38,7 +39,7 @@ web context namespaces for request/session attributes and the web context object
 <p>All Thymeleaf standard dialect Expression Utility Objects are supported by Thymol 2.0. There are implementations equivalent to most methods of each Expression Utility Object, 
 but support for locale related functionality is extremely limited.</p>
 <p>In creating a javascript emulation of a Java framework, it has been necessary to make some compromises with the use of data types associated with the Expression Utility Objects, 
-these are summarised <a href="thymol-types.html">here</a>.</p>
+these are summarised <a href="thymol-types.html" th:href="'thymol-types.html?docu'">here</a>.</p>
 <h4>utilities</h4>
 <ul>
     <li>#aggregates</li>

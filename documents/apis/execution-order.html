@@ -1,11 +1,12 @@
 ---
-title: thymoljs.org documentation &#58; thymol apis &#58; execution order page
+title: Thymol API Execution Order
+description: Describes Thymol API functions that may be used to inject code at defined points in the Thymol life-cycle
 ---
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 {% include header-section.html level="../../" %}
 <body>
-  <div th:replace="../../fragments::frame(docs='true',apis='true',level='../../')"></div>
+{% include common-section.html level="../../" %}
   <div class="content">
     <h2>execution order</h2>
 <p>The following functions provide the facility to inject javascript function objects into Thymol run-time processing sequence. These will be executed at predefined points in the Thymol life cycle.</p>

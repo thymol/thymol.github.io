@@ -1,11 +1,12 @@
 ---
-title: thymoljs.org documentation &#58; thAllowNullText page
+title: Thymol thAllowNullText Control Parameter
+description: Controls the generation of error messages when Thymol detects null text content
 ---
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 {% include header-section.html level="../../" %}
 <body>
-  <div th:replace="../../fragments::frame(docs='true',ctrl='true',level='../../')"></div>
+{% include common-section.html level="../../" %}
   <div class="content">
     <h2>thAllowNullText</h2>
     <p>While developing Thymeleaf templates, it&#39;s quite easy to unintentionally define expressions that can&#39;t be resolved or that resolve to null and when developing with Thymol, it can sometimes be difficult to identify where such problems are occurring.</p>

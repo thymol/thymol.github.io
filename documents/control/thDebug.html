@@ -1,11 +1,12 @@
 ---
-title: thymoljs.org documentation &#58; thDebug page
+title: Thymol thDebug Control Parameter
+description: Controls the generation of alert dialogs when Thymol detects error conditions
 ---
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 {% include header-section.html level="../../" %}
 <body>
-  <div th:replace="../../fragments::frame(docs='true',ctrl='true',level='../../')"></div>
+{% include common-section.html level="../../" %}
   <div class="content">
     <h2>thDebug</h2>
     <p>Thymol includes a very basic debugging facility, setting the value of the thDebug control parameter to "true" puts Thymol into debug mode.</p>

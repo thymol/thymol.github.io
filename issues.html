@@ -1,15 +1,16 @@
 ---
-title: thymoljs.org documentation &#58; thymol issues page
+title: Thymol Issues
+description: Where to report Thymol problems
 ---
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 {% include header-section.html level="" %}
 <body>
-	<div th:replace="fragments::frame(issu='true')"></div>
+{% include common-section.html %}
 	<div class="content"> 		
 	  <h2>issues</h2>
         <p>As with all software, users of Thymol will encounter problems. Some problems are well known and ongoing, some will be new and easily remedied. Most fall somewhere in between.</p>
-        <p>You can review the well known and ongoing Thymol issues on the <a href="issues/known-issues.html">&quot;known issues&quot;</a> page. 
+        <p>You can review the well known and ongoing Thymol issues on the <a href="issues/known-issues.html" th:href="'issues/known-issues.html?issu'">&quot;known issues&quot;</a> page. 
 	  <p>To formally report new issues or potential defects or to review progress on fixes please visit the <a href="https://github.com/thymol/thymol.js/issues">issues reporting site</a></p>
 	</div>
 	<div th:replace="fragments::footer"></div>

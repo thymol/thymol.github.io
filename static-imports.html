@@ -1,14 +1,15 @@
 ---
-title: thymoljs.org documentation &#58; thymol static imports page
+title: Thymol Static Imports
+description: Describes Thymeleaf static import problems and the way Thymol solves them.
 ---
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 {% include header-section.html level="" %}
 <body>
-<div th:replace="fragments::frame(docs='true')"></div>
-<div class="content"> 		
-<h2>static imports</h2>
-<p>One way to work with include(d) content in Thymeleaf is to use the &quot;iframe body&quot; technique, this uses an html <code>&lt;iframe&gt;</code> element as the static content (body) of all document elements with th:include.</p>
+{% include common-section.html %}
+	<div class="content"> 		
+	<h2>static imports</h2>
+	<p>One way to work with include(d) content in Thymeleaf is to use the &quot;iframe body&quot; technique, this uses an html <code>&lt;iframe&gt;</code> element as the static content (body) of all document elements with th:include.</p>
 <pre><code>  &lt;!-- iframe example --&gt;
   &lt;p th:include=&quot;./frames/menu::menu&quot; &gt;
     &lt;iframe src=&quot;./frames/menu.html&quot;&gt;Your browser does not support iframes&lt;/iframe&gt;
@@ -21,12 +22,12 @@ title: thymoljs.org documentation &#58; thymol static imports page
     overflow-y: visible;
   }         
 </code></pre>
-<p>The &quot;iframe body&quot; technique behaves in a way similar to the &quot;complete template&quot; th:include mechanism (see <a href="http://www.thymeleaf.org/doc/html/Using-Thymeleaf.html#including-template-fragments">Using Thymeleaf</a> section &quot;8.1 Including template fragments&quot;).</p>
-<p>With this in mind, you should define only a single th:fragment in the included template, otherwise the static iframe view and the online dynamic view are likely to be different.</p>
-<p>It should be pointed out that this technique will not work with th:substituteby as there is no way to statically replace the containing element (the <code>&lt;p&gt;</code> element in the example above).</p>
-<p>With these provisos, the iframe method can be a useful work-around. There is however another serious disadvantage in this approach:</p>
-<p>When fragments are inserted using th:include or th:substituteby in an online page, the end user&#39;s browser sees this content in the context of the css styles in force where the fragments are embedded in the DOM. For the static view this won&#39;t happen automatically, the styles applied to iframe content are only those defined in the iframe html source file.</p>
-<p>To illustrate the issue, consider this template:</p>
+	<p>The &quot;iframe body&quot; technique behaves in a way similar to the &quot;complete template&quot; th:include mechanism (see <a href="http://www.thymeleaf.org/doc/html/Using-Thymeleaf.html#including-template-fragments">Using Thymeleaf</a> section &quot;8.1 Including template fragments&quot;).</p>
+	<p>With this in mind, you should define only a single th:fragment in the included template, otherwise the static iframe view and the online dynamic view are likely to be different.</p>
+	<p>It should be pointed out that this technique will not work with th:substituteby as there is no way to statically replace the containing element (the <code>&lt;p&gt;</code> element in the example above).</p>
+	<p>With these provisos, the iframe method can be a useful work-around. There is however another serious disadvantage in this approach:</p>
+	<p>When fragments are inserted using th:include or th:substituteby in an online page, the end user&#39;s browser sees this content in the context of the css styles in force where the fragments are embedded in the DOM. For the static view this won&#39;t happen automatically, the styles applied to iframe content are only those defined in the iframe html source file.</p>
+	<p>To illustrate the issue, consider this template:</p>
 <pre><code>  &lt;!--footer.html--&gt;
   &lt;!DOCTYPE html&gt;
   &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;
@@ -41,35 +42,35 @@ title: thymoljs.org documentation &#58; thymol static imports page
     &lt;head&gt;
       &lt;title&gt;simple iframes example&lt;/title&gt;
       &lt;style type=&quot;text/css&quot;&gt;
-        .red-text {color:red;}
-        .big-text {font-size:xx-large;}
-        .underlined-text {text-decoration:underline;}
-        body iframe {border-style: none; margin: 0px; overflow-y: visible;}
+	.red-text {color:red;}
+	.big-text {font-size:xx-large;}
+	.underlined-text {text-decoration:underline;}
+	body iframe {border-style: none; margin: 0px; overflow-y: visible;}
       &lt;/style&gt;
     &lt;/head&gt;
     &lt;body&gt;
       &lt;div class=&quot;red-text&quot;&gt;
-        &lt;div class=&quot;big-text&quot;&gt;
-          &lt;div class=&quot;underlined-text&quot;&gt;
-            &lt;div th:include=&quot;footer::copy&quot;&gt;
-              &lt;iframe src=&quot;footer.html&quot;&gt;Your browser does not support iframes&lt;/iframe&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div th:include=&quot;footer::copy&quot;&gt;
-          &lt;iframe src=&quot;footer.html&quot;&gt;Your browser does not support iframes&lt;/iframe&gt;
-        &lt;/div&gt;
+	&lt;div class=&quot;big-text&quot;&gt;
+	  &lt;div class=&quot;underlined-text&quot;&gt;
+	    &lt;div th:include=&quot;footer::copy&quot;&gt;
+	      &lt;iframe src=&quot;footer.html&quot;&gt;Your browser does not support iframes&lt;/iframe&gt;
+	    &lt;/div&gt;
+	  &lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div th:include=&quot;footer::copy&quot;&gt;
+	  &lt;iframe src=&quot;footer.html&quot;&gt;Your browser does not support iframes&lt;/iframe&gt;
+	&lt;/div&gt;
       &lt;/div&gt;
     &lt;/body&gt;
   &lt;/html&gt;
 </code></pre><p>When the page is rendered we find that the nested styles that should be applied to the content of the inner <code>&lt;div&gt;</code> are not applied to the imported content.</p>
-<p><img src="img/iframe-view.jpg" alt="iframe-view"></p>
-<p>For a site with many pages, many included fragments and many styles the amount of work required to ensure a consistent view of static and dynamic templates soon becomes unfeasible.</p>
-<p>Thymol was originally devised to solve this. Thymol allows you to use th:include and/or th:substituteby and maintain consistency between static and dynamic view with minimal effort.</p>
-<p>Thymol uses javascript and jquery to identify, load and embed the fragments into the DOM in the static view, simulating the way Thymeleaf does this for you in the dynamic view.</p>
-<h3>usage</h3>
-<p>Simply download the Thymol distribution file <a href="download.html">here</a> and follow the instructions <a href="documents/configuration.html">here</a>. 
-<p>Insert the following (or something similar) in your html source:</p>
+	<p><img src="img/iframe-view.jpg" alt="iframe-view"></p>
+	<p>For a site with many pages, many included fragments and many styles the amount of work required to ensure a consistent view of static and dynamic templates soon becomes unfeasible.</p>
+	<p>Thymol was originally devised to solve this. Thymol allows you to use th:include and/or th:substituteby and maintain consistency between static and dynamic view with minimal effort.</p>
+	<p>Thymol uses javascript and jquery to identify, load and embed the fragments into the DOM in the static view, simulating the way Thymeleaf does this for you in the dynamic view.</p>
+	<h3>usage</h3>
+	<p>Simply download the Thymol distribution file <a href="download.html">here</a> and follow the instructions <a href="documents/configuration.html">here</a>. 
+	<p>Insert the following (or something similar) in your html source:</p>
 <pre><code>  &lt;!-- embed example --&gt;
   &lt;script th:remove=&quot;all&quot; type=&quot;text/javascript&quot; src=&quot;&lt;path-to-thymol&gt;thymol.js&quot;&gt;&lt;/script&gt;</code></pre>
 <h3>example</h3>
@@ -80,30 +81,30 @@ title: thymoljs.org documentation &#58; thymol static imports page
     &lt;head&gt;
       &lt;title&gt;thymol styles example&lt;/title&gt;
       &lt;style type=&quot;text/css&quot;&gt;
-        .red-text {color:red;}
-        .big-text {font-size:xx-large;}
-        .underlined-text {text-decoration:underline;}
+	.red-text {color:red;}
+	.big-text {font-size:xx-large;}
+	.underlined-text {text-decoration:underline;}
       &lt;/style&gt;
     &lt;/head&gt;
     &lt;script th:remove=&quot;all&quot; type=&quot;text/javascript&quot; src=&quot;../js/thymol.js&quot;&gt;&lt;/script&gt;
     &lt;body&gt;
       &lt;div class=&quot;red-text&quot;&gt;
-        &lt;div class=&quot;big-text&quot;&gt;
-          &lt;div class=&quot;underlined-text&quot;&gt;
-            &lt;div th:include=&quot;footer::copy&quot;&gt;
-              cannot load template: footer, fragment: copy
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div th:include=&quot;footer::copy&quot;&gt;
-          cannot load template: footer, fragment: copy
-        &lt;/div&gt;
+	&lt;div class=&quot;big-text&quot;&gt;
+	  &lt;div class=&quot;underlined-text&quot;&gt;
+	    &lt;div th:include=&quot;footer::copy&quot;&gt;
+	      cannot load template: footer, fragment: copy
+	    &lt;/div&gt;
+	  &lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div th:include=&quot;footer::copy&quot;&gt;
+	  cannot load template: footer, fragment: copy
+	&lt;/div&gt;
       &lt;/div&gt;
     &lt;/body&gt;
   &lt;/html&gt;
 </code></pre><p>When the Thymol enhanced page is rendered we find that the nested styles are applied to the imported content as intended!</p>
-<p><img src="img/thymol-view.jpg" alt="thymol-view"></p>
-</div>
-<div th:replace="fragments::footer"></div>
+	<p><img src="img/thymol-view.jpg" alt="thymol-view"></p>
+	</div>
+	<div th:replace="fragments::footer"></div>
 </body>
 </html>

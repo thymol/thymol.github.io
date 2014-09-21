@@ -56,7 +56,7 @@
       </div>
       <div><a href="news.html" th:href="${level}?${level+'news.html'}:'news.html'">news</a></div>
       <div><a href="credits.html" th:href="${level}?${level+'credits.html'}:'credits.html'">credits</a></div>
-      <div><a href="index.html" href="http://forum.thymoljs.org/">user forum</a></div>
+      <div><a href="http://forum.thymoljs.org/">user forum</a></div>
       <div><a th:href="${level}?${level+'issues.html'}:'issues.html'" th:onclick="${clkIndx}">issues</a></div>
       <div id="margin2" th:if="${issu}" th:with="path='issues/',link=${level+path}">
         <div><a href="issues/known-issues.html" th:with="html='known-issues.html'" th:href="${level}?${link+html}:${path+html}">known issues</a></div>

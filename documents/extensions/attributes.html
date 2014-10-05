@@ -14,7 +14,7 @@ description: Used to define custom Thymol attributes
 <p><span style="font-weight: bold;">thymol.configureAttributeProcessor = function(prefix, suffix, attrProcessorFunction, precedence, dataAttributeName)</span></p>
 <ul>
 <li><p>prefix - specifies the &quot;namespace&quot; prefix value that introduces the attribute definition in the template. This is normally a short string, may be null to signify no prefix.</p></li>
-<li><p>suffix - the name of the attribute being defined.</p></li>
+<li><p>suffix - the name of the attribute being defined. This can be a simple string or may specify a regular expression that identifies a pattern that matches valid names for this attribute (see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp?redirectlocale=en-US&redirectslug=JavaScript%2FReference%2FGlobal_Objects%2FRegExp">here</a>).</p></li>
 <li><p>attrProcessorFunction - the definition of a callback function that is executed when the attribute is encountered during template processing.</p></li>
 <li><p>precedence - the value assigned to the run-time precedence of the attribute. This controls order of processing: low precedence value == process sooner high precedence value == process later.</p></li>
 <li><p>dataAttributeName - defines a synonym for the custom attribute - will be treated as a &quot;data-*&quot; html5 attribute by may be given any (html5) valid name.</p>

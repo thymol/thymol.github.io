@@ -17,12 +17,12 @@ description: Used to define custom Thymol dialects
             attributeProcessors : [ 
                 {
                     name : attr1Nm,
-                    processor : attr1ProcessorFnNn,
+                    processor : attr1ProcessorFnNm,
                     precedence : attr1Prec
                 },
                 {
                     name : attr2Nm,
-                    processor : attr2ProcessorFnNn,
+                    processor : attr2ProcessorFnNm,
                     precedence : attr2Prec
                 }, 
                 ...
@@ -30,11 +30,11 @@ description: Used to define custom Thymol dialects
             elementProcessors : [
                 {
                     name : elem1Nm,
-                    processor : elem1ProcessorFnNn
+                    processor : elem1ProcessorFnNm
                 },
                 {
                     name : elem2Nm,
-                    processor : elem2ProcessorFnNn
+                    processor : elem2ProcessorFnNm
                 }, 
                 ...
             ],
@@ -43,24 +43,25 @@ description: Used to define custom Thymol dialects
                 obj2ExprObj,
                 {
                     name : obj1Nm,
-                    object : obj1ProcessorFnNn
+                    object : obj1ProcessorFnNm
                 },
                 {
                     name : obj2Nm,
-                    object : obj2ProcessorFnNn
+                    object : obj2ProcessorFnNm
                 },
                 ...
                 ...
             ]
         }</code></pre><p>Where:</p>
   <ul>
-      <li>Any of the properties prefix, attributeProcessors, elementProcessors or objects may be omitted.</li>
+      <li>Any of the properties prefix, attributeProcessors, elementProcessors or objects may be omitted.</li><br/>
       <li>prefixNm is the (xml namespace) prefix used to identify the dialect components.</li>
-      <li>attrNProcessorFnNn is a reference to the Nth atrribute processor function.</li>
-      <li>attrNPrec is the precedence value to assign the Nth attribute (integer low = process early, high = process late, default 20000).</li>
-      <li>objNExprObj is a reference to the Nth <a href="expression-objects.html" th:href="'expression-objects.html?docu&amp;exte'">configureModule loadable</a> expression object definition.</li>
+      <li>attrNNm specifies the Nth attribute name. This may be a plain string or a regular expression (<a href="attributes.html?docu&exte">see here</a>).</li>
+      <li>attrNProcessorFnNm is a reference to the Nth atrribute processor function.</li>
+      <li>attrNPrec is the precedence value to assign the Nth attribute (integer low = process early, high = process late, default 20000).</li><br/>
+      <li>objNExprObj is a reference to the Nth <a href="expression-objects.html" th:href="'expression-objects.html?docu&amp;exte'">configureModule loadable</a> expression object definition.</li><br/>
       <li>objNNm is the name of the Nth plain javascript expression object (should start with a &quot;#&quot; character).</li>
-      <li>objNProcessorFnNn is a reference to the Nth plain javascript expression object function.</li>
+      <li>objNProcessorFnNm is a reference to the Nth plain javascript expression object function.</li>
   </ul>
   <p>Members of the attributeProcessors array property are name, function, precedence triples.<p>              
   <p>Members of the elementProcessors array property are name, function pairs.<p>              

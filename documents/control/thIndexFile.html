@@ -1,0 +1,17 @@
+---
+title: Thymol thIndexFile Control Parameter
+description: Defines the default Thymol template file for a URI structure
+---
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+{% include header-section.html level="../../" %}
+<body>
+{% include common-section.html level="../../" %}
+  <div class="content">
+    <h2>thIndexFile</h2>
+    <p>The thIndexFile parameter sets the name of a default template to be loaded by Thymol when the result of processing a standard URL expression is "/".</p>
+    <p>There is no default value for this parameter.</p>
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+</body>
+</html>

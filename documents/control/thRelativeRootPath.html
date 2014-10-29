@@ -1,0 +1,40 @@
+---
+title: Thymol thRelativeRootPath Control Parameter
+description: New relative mechanism used to define location of Thymeleaf templates for Thymol
+---
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+{% include header-section.html level="../../" %}
+<body>
+{% include common-section.html level="../../" %}
+  <div class="content">
+    <h2>thRelativeRootPath</h2>
+    <p>The thRelativeRootPath parameter controls a new mechanism for determining the location of (template) files within the structure of a Thymol project.</p>
+    <p>The default value for thRelativeRootPath is blank (""), setting it's value to non-blank is the indicator for Thymol to use the new relative root path file location mechanism.</p>
+    <p>The mechanism works like this: normally, a Thymol template must load the "thymol.js" bootstrap script and normally, this script is found in a directory common to all template files
+     within a given Thymol project, the relative root path addressing mechanism exploits this fact to locate the other templates relative to the location of the "thymol.js" script.
+      The actual value given to the thRelativeRootPath parameter specifies the relative path between this script and the effective root directory.
+       Thymol can then append this value to the path to "thymol.js", then append the value of the thPath variable to find the location of other templates files.</p>
+       
+  <p></p>
+  <p>Here is a typical example taken from <a href="../../examples/templates/v21/petclinic/main/webapp/WEB-INF/thymeleaf/welcome.html">here</a>:
+  <br/>
+  <br/>
+  <img src="../../img/examples/example-file-structure.png" alt="petclinic directory example"/>
+  <br/>
+  <br/>
+  </p>
+  <p>In the home page (welcome.html), the script tag embodying the "thymol.js" load looks like this:
+  <pre><code>      &lt;script type="text/JavaScript" src="../../resources/thymol/thymol.js" data-jquery-src="" data-thymol-load="../../resources/thymol/petclinic.js"&gt;&lt;/script&gt;
+  </code></pre>
+  <p>In this example, we set:
+  <pre><code>      thRelativeRootPath = "../..";</code></pre>&nbsp;&nbsp;&nbsp;&nbsp;So that the effective root directory is "main/webapp".</p>
+  <p>We also set:</p>
+  <pre><code>      thPath = "WEB-INF/thymeleaf";</code></pre>&nbsp;&nbsp;&nbsp;&nbsp;and:</p>
+  <pre><code>      thMessagePath = "../resources/messages";</code></pre>&nbsp;&nbsp;&nbsp;&nbsp;Now all the paths to the templates will work as normal,
+  <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;resources can be found via "@{/resources/...}"
+  <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;and messages in "main/resources/messages".</p>
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+</body>
+</html>

@@ -9,15 +9,24 @@
 			<div><a href="{{ include.level }}documents/messages.html" th:href="'{{ include.level }}documents/messages.html?docu'" target="_top">message resources</a></div>
 			<div><a href="{{ include.level }}documents/control-parameters.html" th:href="${!para}?'{{ include.level }}documents/control-parameters.html?docu&amp;para':'{{ include.level }}documentation.html?docu'" target="_top">control parameters</a></div>
 			<div id="margin3" th:if="${docu and para}">
-				<div><a href="{{ include.level }}documents/control/thDebug.html" th:href="'{{ include.level }}documents/control/thDebug.html?docu&amp;para'" target="_top">thDebug</a></div>
-				<div><a href="{{ include.level }}documents/control/thProtocol.html" th:href="'{{ include.level }}documents/control/thProtocol.html?docu&amp;para'" target="_top">thProtocol</a></div>
-				<div><a href="{{ include.level }}documents/control/thRoot-and-thPath.html" th:href="'{{ include.level }}documents/control/thRoot-and-thPath.html?docu&amp;para'" target="_top">thRoot &amp; thPath</a></div>
-				<div><a href="{{ include.level }}documents/control/thMessagePath.html" th:href="'{{ include.level }}documents/control/thMessagePath.html?docu&amp;para'" target="_top">thMessagePath</a></div>
-				<div><a href="{{ include.level }}documents/control/thAllowNullText.html" th:href="'{{ include.level }}documents/control/thAllowNullText.html?docu&amp;para'" target="_top">thAllowNullText</a></div>
-				<div><a href="{{ include.level }}documents/control/thMappings.html" th:href="'{{ include.level }}documents/control/thMappings.html?docu&amp;para'" target="_top">thMappings</a></div>
-				<div><a href="{{ include.level }}documents/control/thVars.html" th:href="'{{ include.level }}documents/control/thVars.html?docu&amp;para'" target="_top">thVars</a></div>
-				<div><a href="{{ include.level }}documents/control/thMessages.html" th:href="'{{ include.level }}documents/control/thMessages.html?docu&amp;para'" target="_top">thMessages</a></div>
-				<div><a href="{{ include.level }}documents/control/thDisable.html" th:href="'{{ include.level }}documents/control/thDisable.html?docu&amp;para'" target="_top">thDisable</a></div>
+				<div><a href="{{ include.level }}documents/control/thRoot-and-thPath.html" th:href="'{{ include.level }}documents/control/thRoot-and-thPath.html?docu&amp;para'">thRoot &amp; thPath</a></div>
+				<div><a href="{{ include.level }}documents/control/thRelativeRootPath.html" th:href="'{{ include.level }}documents/control/thRelativeRootPath.html?docu&amp;para'">thRelativeRootPath</a></div>        
+				<div><a href="{{ include.level }}documents/control/thVars.html" th:href="'{{ include.level }}documents/control/thVars.html?docu&amp;para'">thVars</a></div>
+				<div><a href="{{ include.level }}documents/control/thMessages.html" th:href="'{{ include.level }}documents/control/thMessages.html?docu&amp;para'">thMessages</a></div>
+				<div><a href="{{ include.level }}documents/control/thLocale.html" th:href="'{{ include.level }}documents/control/thLocale.html?docu&amp;para'">thLocale</a></div>
+				<div><a href="{{ include.level }}documents/control/thDebug.html" th:href="'{{ include.level }}documents/control/thDebug.html?docu&amp;para'">thDebug</a></div>
+				<div><a href="{{ include.level }}documents/control/thProtocol.html" th:href="'{{ include.level }}documents/control/thProtocol.html?docu&amp;para'">thProtocol</a></div>
+				<div><a href="{{ include.level }}documents/control/thMessagePath.html" th:href="'{{ include.level }}documents/control/thMessagePath.html?docu&amp;para'">thMessagePath</a></div>
+				<div><a href="{{ include.level }}documents/control/thMessagesBaseName.html" th:href="'{{ include.level }}documents/control/thMessagesBaseName.html?docu&amp;para'">thMessagesBaseName</a></div>
+				<div><a href="{{ include.level }}documents/control/thMappings.html" th:href="'{{ include.level }}documents/control/thMappings.html?docu&amp;para'">thMappings</a></div>
+				<div><a href="{{ include.level }}documents/control/thPrefix.html" th:href="'{{ include.level }}documents/control/thPrefix.html?docu&amp;para'">thPrefix</a></div>
+				<div><a href="{{ include.level }}documents/control/thDataPrefix.html" th:href="'{{ include.level }}documents/control/thDataPrefix.html?docu&amp;para'">thDataPrefix</a></div>
+				<div><a href="{{ include.level }}documents/control/thDisable.html" th:href="'{{ include.level }}documents/control/thDisable.html?docu&amp;para'">thDisable</a></div>
+				<div><a href="{{ include.level }}documents/control/thExtendedMapping.html" th:href="'{{ include.level }}documents/control/thExtendedMapping.html?docu&amp;para'">thExtendedMapping</a></div>
+				<div><a href="{{ include.level }}documents/control/thIndexFile.html" th:href="'{{ include.level }}documents/control/thIndexFile.html?docu&amp;para'">thIndexFile</a></div>
+				<div><a href="{{ include.level }}documents/control/thDefaultPrecedence.html" th:href="'{{ include.level }}documents/control/thDefaultPrecedence.html?docu&amp;para'">thDefaultPrecedence</a></div>
+				<div><a href="{{ include.level }}documents/control/thDefaultPrecision.html" th:href="'{{ include.level }}documents/control/thDefaultPrecision.html?docu&amp;para'">thDefaultPrecision</a></div>      
+				<div><a href="{{ include.level }}documents/control/thAllowNullText.html" th:href="'{{ include.level }}documents/control/thAllowNullText.html?docu&amp;para'">thAllowNullText</a></div>
 			</div>
 			<div><a href="{{ include.level }}documents/browser-constraints.html" th:href="'{{ include.level }}documents/browser-constraints.html?docu'" target="_top">browser constraints</a></div>
 			<div><a href="{{ include.level }}documents/expression-objects.html" th:href="'{{ include.level }}documents/expression-objects.html?docu'" target="_top">expression objects</a></div>
@@ -43,6 +52,7 @@
 		      <div><a href="{{ include.level }}examples/templates/v21/stsm/stsm3.html" target="_top">stsm example</a></div>
 		      <div><a href="{{ include.level }}examples/templates/v21/ecosystem/with-dialect/with-example1.html" target="_top">with-dialect</a></div>
 		      <div><a href="{{ include.level }}examples/templates/v21/extrathyme/webapp/WEB-INF/templates/extrathyme.html" target="_top">extrathyme</a></div>
+		      <div><a href="{{ include.level }}examples/templates/v21/petclinic/main/webapp/WEB-INF/thymeleaf/welcome.html" target="_top">petclinic</a></div>
 		</div>
 		<div><a href="{{ include.level }}news.html" target="_top">news</a></div>
 		<div><a href="{{ include.level }}credits.html" target="_top">credits</a></div>

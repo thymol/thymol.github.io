@@ -10,7 +10,7 @@ description: Describes known Thymol browser compatability issues
   <div class="content">
     <h2>browser constraints</h2>
     <p>Thymol was originally intended for use in a static (non web container) environment, because of this, by default it uses &quot;file://&quot; protocol URIs to access templates.</p>
-    <p>In local file system based developments, the accessibility of referenced templates is subject to the constraints imposed by the javascript host within which Thymol is being executed, this is normally a web-browser.</p>
+    <p>In local file system based developments, the accessibility of referenced templates is subject to the constraints imposed by the JavaScript host within which Thymol is being executed, this is normally a web-browser.</p>
     <p>To view Thymeleaf templates loaded from the file system your browser must be configured to allow access to local (file-store) files.</p>
     <h3>firefox</h3>
     <p>To configure firefox so that it relaxes the strict "same origin" policy, open firefox and type "about:config" into the address bar, proceed to the preference setting facility and locate the "security.fileuri.strict_origin_policy" parameter. You need to set the value of this flag to "false".</p>
@@ -22,11 +22,12 @@ description: Describes known Thymol browser compatability issues
     <p>You cannot use th:substituteby to replace the content of the head element of an html file using the Chrome browser, if possible, use th:include instead.</p>
     <h3>internet explorer</h3>
     <p>Local file access is enabled by default by Internet Explorer</p>
-    <p>There are serious problems with Internet Explorer 11 local file loading using the JQuery 2.1 XHR implementation. You are strongly advised to use JQuery 1.11 until these problems are resolved.
+    <p>There are serious problems with Internet Explorer 11 local file loading using the JQuery 2.1 XHR implementation. You are strongly advised to use JQuery 1.11 until these problems are resolved.</p>
+    <p>You may also find that you need to apply &quot;disable XSS filter&quot; to your IE11 configuration.</p>
     <h3>safari, opera etc..</h3>
     <p>Thymol 2.0 is not tested with recent versions of Safari or Opera. Older versions have worked without problems and no issues have (so far) been raised by users of newer releases.</p>
     <h3>web server</h3>
-    <p>None of these restrictions apply to files served via http, so if you&#39;re running into too many problems in a file-system based development you may consider deploying your templates and javascript files on a web server.</p>
+    <p>None of these restrictions apply to files served via http, so if you&#39;re running into too many problems in a file-system based development you may consider deploying your templates and JavaScript files on a web server.</p>
   </div>
   <div th:replace="../fragments::footer"></div>
 </body>

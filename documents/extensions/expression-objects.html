@@ -10,7 +10,7 @@ description: Used to define custom Thymol expression objects
   <div class="content">
     <h2>expression objects</h2>
     <p>Using Thymol 2.0 you may define custom expression utility objects that are executed in the same way as the standard dialect built-in functions (see <a href="../expression-objects.html">here</a>).</p>
-    <p>To do this, you define a javascript function object and configure that function for processing in accordance with the following guidelines.</p>
+    <p>To do this, you define a JavaScript function object and configure that function for processing in accordance with the following guidelines.</p>
     <h3>function definition</h3>
     <p>A custom expression utility object needs to be defined as follows:</p>
     <pre><code>        var fn = function() {
@@ -25,7 +25,7 @@ description: Used to define custom Thymol expression objects
             };
         
         }();</code></pre><p>Where &quot;fn&quot; is the name of the custom expression utility object (which should be unique!) and &quot;fnHashStr&quot; is the name that will be used to refer to this expression object (which should also be unique!).</p>
-        <p>The value of &quot;fn&quot; can be any valid javascript identifier name.</p>
+        <p>The value of &quot;fn&quot; can be any valid JavaScript identifier name.</p>
         <p>The value of &quot;fnHashStr&quot; should equate to a string value and should start with a &quot;#&quot; character.</p>
     <pre><code>        var fieldsObject = function() {
 

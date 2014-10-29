@@ -1,0 +1,18 @@
+---
+title: Thymol thPrefix Control Parameter
+description: Defines the Thymol attributes xmlns prefix
+---
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+{% include header-section.html level="../../" %}
+<body>
+{% include common-section.html level="../../" %}
+  <div class="content">
+    <h2>thPrefix</h2>
+    <p>The thPrefix parameter sets the prefix used to identify attributes for processing by Thymol.</p>
+    <p>The default value for this parameter is &quot;th&quot;. The default value is used if it isn't overridden by setting thPrefix and cannot be deduced from an appropriate xmlns declaration in the html element.</p>
+    <p>The default value may be set to a different value using the thDefaultPrefix variable (<a href="../configuration.html?docu">see</a>).</p>
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+</body>
+</html>

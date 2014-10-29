@@ -11,10 +11,11 @@ description: Defines Thymol URI aliases
     <h2>thMappings</h2>
     <p>Another feature of Thymol is the thMappings structure that defines Thymol mappings.</p>
     <p>Mappings are intended mainly to simplify the translation between URI values within a Thymeleaf template and real world URLs. Mapping URLs may locate resources in the local file system or on the network.</p>
-    <p>Mappings are defined in a javascript string array of key/value pairs called &quot;thMappings&quot;.
-    <p>
-    <p>The mapping translation is applied to template locator values and to URLs defined by Thymeleaf @{...} URL expressions after any variable substitutions and expression evaluations have been calculated.
-    <p>The tra nslation made is as follows: if the leading part of an expression (either URL or template locator) matches a mapping key, then that part of the expression is replaced by the mapping value. If two or more mapping keys share some leading text in common, then the longest matching fragment is taken in preference to any shorter segments.</p>
+    <p>Mappings are defined in a JavaScript string array of key/value pairs called &quot;thMappings&quot;.</p>
+    <p>The mapping translation is applied to template locator values and to URLs defined by Thymeleaf standard URL expressions (@{...}) after any variable substitutions and expression evaluations have been calculated.</p>
+    <p>The basic translation made is as follows: if the value of a URI matches a mapping key, then that URI is replaced by the mapping value.</p>
+    <p>There is also an "extended" mapping mode which when in force, causes the key match to be found true when the initial substring of a URI value is found to match the key value. (<a href="thExtendedMapping.html?docu&amp;para">See also</a>).</p>
+    <p>You can enable the extended mapping mode by setting the value of the thExtendedMapping parameter to "true".</p>
     <p>Here is an example mappings definition set:</p>
 <pre><code>        var thMappings = [
             [&quot;/webjars/bootstrap/2.3.0/css/bootstrap.min.css&quot;,        &quot;http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap.min.css&quot;],

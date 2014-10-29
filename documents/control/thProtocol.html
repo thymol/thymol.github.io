@@ -10,6 +10,7 @@ description: Defines the protocol to apply to Thymol generated URIs
   <div class="content">
     <h2>thProtocol</h2>
     <p>The thProtocol parameter sets the default protocol to apply to generated URIs.</p>
+    <p>It is often not necessary to set this value as the protocol to apply in a given template can usually be deduced by examining the current document. Deliberately setting this parameter will override the derived value.</p>
     <p>The default value for this parameter is &quot;file:///&quot; which is a good choice for file-system based developments.</p>
     <p>Using &quot;http://&quot; may be appropriate for Thymol-enabled Thymeleaf templates that are loaded from a web server.</p>
   </div>

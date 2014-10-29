@@ -9,7 +9,10 @@ description: Defines location of externalised Thymol message content
 {% include common-section.html level="../../" %}
   <div class="content">
     <h2>thMessagePath</h2>
-    <p>Thymol uses the thMessagePath to determine the location of properties files containing the default externalised messages for a template. These are files named "Messages.properties" or "Messages(suffix).properties" where (suffix) represents an optional locale specification in the form "_ll_CC-vv". Here, "ll" is a specifier for language, "CC" an optional country and "vv" an optional variant.</p>
+    <p>Thymol uses the thMessagePath to determine the location of properties files that contain the default externalised messages for a template.</p>
+    <p>By default, the externalised messages files are named "Messages.properties" or "Messages(suffix).properties".</p>
+    <p>In the second form (suffix) represents an optional locale specification in the form "_ll_CC-vv". Here, "ll" is a specifier for language, "CC" an optional country and "vv" an optional variant.</p>
+    <p>You can change the name used when searching for messages files by setting the value of the thMessagesBaseName control variable.
   </div>
   <div th:replace="../../fragments::footer"></div>
 </body>

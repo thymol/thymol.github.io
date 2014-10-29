@@ -1,0 +1,22 @@
+---
+title: Thymol thDataPrefix Control Parameter
+description: Defines the prefix for html5-style Thymol attributes 
+---
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+{% include header-section.html level="../../" %}
+<body>
+{% include common-section.html level="../../" %}
+  <div class="content">
+    <h2>thDataPrefix</h2>
+    <p>The thDataPrefix parameter sets the prefix used to identify html5 data-style attributes for processing by Thymol.</p>
+    <p>The default value for this parameter is &quot;data&quot;.</p>
+    <p>For a given Thymol attribute, the actual value to be tested against when seeking html5-style instances of this attribute will be:
+    <pre>&nbsp;&nbsp;&nbsp;&nbsp;thDataPrefix + "-" + thPrefix + "-" + (attribute name)</pre>
+    <p>For example, for the th:text attribute and default values for the control parameters, the corresponding html5-style attribute is: 
+    <pre>&nbsp;&nbsp;&nbsp;&nbsp;data-th-text</pre>
+    <p>The default value may be set to a different value using the thDefaultDataPrefix variable (<a href="../configuration.html?docu">see</a>).</p>
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+</body>
+</html>

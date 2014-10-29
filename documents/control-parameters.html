@@ -9,34 +9,43 @@ description: Describes Thymol control parameters
 {% include common-section.html level="../" %}
   <div class="content">
     <h2>control parameters</h2>
-    <p>The are a number of pre-defined javascript variable names that define parameters that may be used to control the way that Thymol behaves when running, these parameters have names the beginning with the prefix &quot;th&quot;.</p>
+    <p>The are a number of pre-defined JavaScript variable names that define parameters that may be used to control the way that Thymol behaves when running, these parameters have names the beginning with the prefix &quot;th&quot;.</p>
     <h3>scalar valued parameters</h3>
     <ul>
-      <li>thDebug</li>
-      <li>thProtocol</li>
-      <li>thRoot & thPath</li>
-      <li>thMessagePath</li>
-      <li>thAllowNullText</li>
+      <li><a href="control/thRoot-and-thPath.html?docu&amp;para">thRoot & thPath</a></li>
+      <li><a href="control/thRelativeRootPath.html?docu&amp;para">thRelativeRootPath</a></li>        
+      <li><a href="control/thProtocol.html?docu&amp;para">thProtocol</a></li>
+      <li><a href="control/thDebug.html?docu&amp;para">thDebug</a></li>
+      <li><a href="control/thMessagePath.html?docu&amp;para">thMessagePath</a></li>
+      <li><a href="control/thMessagesBaseName.html?docu&amp;para">thMessagesBaseName</a></li>
+      <li><a href="control/thLocale.html?docu&amp;para">thLocale</a></li>
+      <li><a href="control/thPrefix.html?docu&amp;para">thPrefix</a></li>
+      <li><a href="control/thDataPrefix.html?docu&amp;para">thDataPrefix</a></li>
+      <li><a href="control/thExtendedMapping.html?docu&amp;para">thExtendedMapping</a></li>
+      <li><a href="control/thIndexFile.html?docu&amp;para">thIndexFile</a></li>
+      <li><a href="control/thDefaultPrecedence.html?docu&amp;para">thDefaultPrecedence</a></li>
+      <li><a href="control/thDefaultPrecision.html?docu&amp;para">thDefaultPrecision</a></li>      
+      <li><a href="control/thAllowNullText.html?docu&amp;para">thAllowNullText</a></li>
       <li style="color: grey;">thShowNullOperands has been deprecated</li>
     </ul>
     <h3>structure valued parameters</h3>
     <ul>
-      <li>thMappings</li>
-      <li>thVars</li>
-      <li>thMessages</li>
-      <li>thDisable</li>
+      <li><a href="control/thVars.html?docu&amp;para">thVars</a></li>
+      <li><a href="control/thMessages.html?docu&amp;para">thMessages</a></li>
+      <li><a href="control/thMappings.html?docu&amp;para">thMappings</a></li>
+      <li><a href="control/thDisable.html?docu&amp;para">thDisable</a></li>
     </ul>
     <p>The effect of each of these parameters is discussed in the following sections. The way in which they may be defined is discussed here.</p>
     <p>You may set any of the scalar valued parameters by one of the following mechanisms:</p>
     <ul>
-      <li>Set them using a javascript element in each template source file.</li>
-      <li>Set them using a javascript element in include javascript source file.</li>
+      <li>Set them using a JavaScript element in each template source file.</li>
+      <li>Set them using a JavaScript element in an included JavaScript source file.</li>
       <li>Set them as URL parameters on the src attribute of the html script element that defines the Thymol import.</li>
       <li>Allow them to default!</li>
     </ul>
     <p>e.g. The value of thProtocol may be set to &quot;http://&quot; for a particular template using:</p>
     <pre>
-      <code>&lt;script type=&quot;text/javascript&quot; src=&quot;../../../js/thymol.js&quot; data-thymol-parameters=&quot;?thProtocol=http://&quot;&gt;&lt;/script&gt;
+      <code>&lt;script type=&quot;text/JavaScript&quot; src=&quot;../../../js/thymol.js&quot; data-thymol-parameters=&quot;?thProtocol=http://&quot;&gt;&lt;/script&gt;
 </code>
     </pre>
   </div>

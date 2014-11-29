@@ -1,0 +1,19 @@
+---
+title: Thymol thLocalMessages Control Parameter
+description: Controls search for message bundles in template local directory 
+---
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+{% include header-section.html level="../../" %}
+<body>
+{% include common-section.html level="../../" %}
+  <div class="content">
+    <h2>thLocalMessages</h2>
+    <p>The thLocalMessages parameter is a flag that indicates that Thymol should search for the message bundles (message property files) that are associated with a template in that template's own directory.</p>
+    <p>By default, Thymol will attempt to resolve message values referenced in a template by searching within the template's local directory for a files with the same base name as that template, but with the file extension ".properties" and (possibly) with a locale-derived suffix.</p>
+    <p>e.g. Within a template named "fred.html" and in an environment with the locale "en_US", Thymol would try to resolve any message-valued parameters within "fred.html" by looking for these message properties in files with names "fred_en_US.properties", "fred_en.properties" etc.</p>
+    <p>You may stop this default message resolution mechanism by setting the value of the thLocalMessages parameter to "false".</p> 
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+</body>
+</html>

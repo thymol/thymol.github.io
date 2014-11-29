@@ -15,8 +15,8 @@ description: New relative mechanism used to define location of Thymeleaf templat
      within a given Thymol project, the relative root path addressing mechanism exploits this fact to locate the other templates relative to the location of the "thymol.js" script.
       The actual value given to the thRelativeRootPath parameter specifies the relative path between this script and the effective root directory.
        Thymol can then append this value to the path to "thymol.js", then append the value of the thPath variable to find the location of other templates files.</p>
-       
-  <p></p>
+    <p>If thRelativeRootPath is used, Thymol will attempt to derive the value that would have been used as thRoot to achieve the same resultant root path and sets the thRoot parameter to this value. This thRoot value can then be used in scripts later in the execution flow. This can assist in the migration of existing Thymol scripts from absolute to relative root path styles.</p>  
+  <h3>usage</h3>
   <p>Here is a typical example taken from <a href="../../examples/templates/v21/petclinic/main/webapp/WEB-INF/thymeleaf/welcome.html">here</a>:
   <br/>
   <br/>

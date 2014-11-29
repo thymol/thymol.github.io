@@ -18,6 +18,7 @@
 				<div><a href="{{ include.level }}documents/control/thProtocol.html" th:href="'{{ include.level }}documents/control/thProtocol.html?docu&amp;para'">thProtocol</a></div>
 				<div><a href="{{ include.level }}documents/control/thMessagePath.html" th:href="'{{ include.level }}documents/control/thMessagePath.html?docu&amp;para'">thMessagePath</a></div>
 				<div><a href="{{ include.level }}documents/control/thMessagesBaseName.html" th:href="'{{ include.level }}documents/control/thMessagesBaseName.html?docu&amp;para'">thMessagesBaseName</a></div>
+				<div><a href="{{ include.level }}documents/control/thLocalMessages.html" th:href="'{{ include.level }}documents/control/thLocalMessages.html?docu&amp;para'">thLocalMessages</a></div>
 				<div><a href="{{ include.level }}documents/control/thMappings.html" th:href="'{{ include.level }}documents/control/thMappings.html?docu&amp;para'">thMappings</a></div>
 				<div><a href="{{ include.level }}documents/control/thPrefix.html" th:href="'{{ include.level }}documents/control/thPrefix.html?docu&amp;para'">thPrefix</a></div>
 				<div><a href="{{ include.level }}documents/control/thDataPrefix.html" th:href="'{{ include.level }}documents/control/thDataPrefix.html?docu&amp;para'">thDataPrefix</a></div>
@@ -28,7 +29,6 @@
 				<div><a href="{{ include.level }}documents/control/thDefaultPrecision.html" th:href="'{{ include.level }}documents/control/thDefaultPrecision.html?docu&amp;para'">thDefaultPrecision</a></div>      
 				<div><a href="{{ include.level }}documents/control/thAllowNullText.html" th:href="'{{ include.level }}documents/control/thAllowNullText.html?docu&amp;para'">thAllowNullText</a></div>
 			</div>
-			<div><a href="{{ include.level }}documents/browser-constraints.html" th:href="'{{ include.level }}documents/browser-constraints.html?docu'" target="_top">browser constraints</a></div>
 			<div><a href="{{ include.level }}documents/expression-objects.html" th:href="'{{ include.level }}documents/expression-objects.html?docu'" target="_top">expression objects</a></div>
 			<div><a href="{{ include.level }}documents/thymol-types.html" th:href="'{{ include.level }}documents/thymol-types.html?docu'" target="_top">thymol types</a></div>
 			<div><a href="{{ include.level }}documents/thymol-api.html" th:href="${!apis}?'{{ include.level }}documents/thymol-api.html?docu&amp;apis':'{{ include.level }}documentation.html?docu'" target="_top">thymol API</a></div>
@@ -59,7 +59,8 @@
 		<div><a href="http://forum.thymoljs.org/" target="_top">user forum</a></div>
 		<div><a href="{{ include.level }}issues.html" th:href="'{{ include.level }}issues.html'+${!issu}?'?issu':''" target="_top">issues</a></div>
 		<div id="margin2" th:if="${issu}">
-			<div><a href="{{ include.level }}issues/known-issues.html" th:href="'{{ include.level }}issues/known-issues.html?issu'" target="_top">known issues</a></div>
+			<div><a href="{{ include.level }}issues/browser-constraints.html" th:href="'{{ include.level }}issues/browser-constraints.html?issu'" target="_top">browser constraints</a></div>
+			<div><a href="{{ include.level }}issues/known-issues.html" th:href="'{{ include.level }}issues/known-issues.html?issu'" target="_top">other known issues</a></div>
 			<div><a href="https://github.com/thymol/thymol.js/issues" target="_top">create new issue</a></div>
 		</div>
 		<div><a href="http://www.thymeleaf.org" target="_top">thymeleaf</a></div>

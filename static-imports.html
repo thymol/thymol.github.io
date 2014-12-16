@@ -22,11 +22,11 @@ description: Describes Thymeleaf static import problems and the way Thymol solve
     overflow-y: visible;
   }         
 </code></pre>
-	<p>The &quot;iframe body&quot; technique behaves in a way similar to the &quot;complete template&quot; th:include mechanism (see <a href="http://www.thymeleaf.org/doc/html/Using-Thymeleaf.html#including-template-fragments">Using Thymeleaf</a> section &quot;8.1 Including template fragments&quot;).</p>
+	<p>The &quot;iframe body&quot; technique behaves in a way similar to the &quot;complete template&quot; th:include mechanism (see <a href="http://www.thymeleaf.org/doc/usingthymeleaf.html#including-template-fragments">Using Thymeleaf</a> section &quot;8.1 Including template fragments&quot;).</p>
 	<p>With this in mind, you should define only a single th:fragment in the included template, otherwise the static iframe view and the online dynamic view are likely to be different.</p>
-	<p>It should be pointed out that this technique will not work with th:substituteby as there is no way to statically replace the containing element (the <code>&lt;p&gt;</code> element in the example above).</p>
+	<p>It should be pointed out that this technique will not work with th:replace (substituteby) as there is no way to statically replace the containing element (the <code>&lt;p&gt;</code> element in the example above).</p>
 	<p>With these provisos, the iframe method can be a useful work-around. There is however another serious disadvantage in this approach:</p>
-	<p>When fragments are inserted using th:include or th:substituteby in an online page, the end user&#39;s browser sees this content in the context of the css styles in force where the fragments are embedded in the DOM. For the static view this won&#39;t happen automatically, the styles applied to iframe content are only those defined in the iframe html source file.</p>
+	<p>When fragments are inserted using th:include or th:replace (substituteby) in an online page, the end user&#39;s browser sees this content in the context of the css styles in force where the fragments are embedded in the DOM. For the static view this won&#39;t happen automatically, the styles applied to iframe content are only those defined in the iframe html source file.</p>
 	<p>To illustrate the issue, consider this template:</p>
 <pre><code>  &lt;!--footer.html--&gt;
   &lt;!DOCTYPE html&gt;
@@ -66,13 +66,18 @@ description: Describes Thymeleaf static import problems and the way Thymol solve
 </code></pre><p>When the page is rendered we find that the nested styles that should be applied to the content of the inner <code>&lt;div&gt;</code> are not applied to the imported content.</p>
 	<p><img src="img/iframe-view.jpg" alt="iframe-view"></p>
 	<p>For a site with many pages, many included fragments and many styles the amount of work required to ensure a consistent view of static and dynamic templates soon becomes unfeasible.</p>
-	<p>Thymol was originally devised to solve this. Thymol allows you to use th:include and/or th:substituteby and maintain consistency between static and dynamic view with minimal effort.</p>
+	<p>Thymol was originally devised to solve this. Thymol allows you to use th:include and/or th:replace (substituteby) and maintain consistency between static and dynamic view with minimal effort.</p>
 	<p>Thymol uses javascript and jquery to identify, load and embed the fragments into the DOM in the static view, simulating the way Thymeleaf does this for you in the dynamic view.</p>
 	<h3>usage</h3>
 	<p>Simply download the Thymol distribution file <a href="download.html">here</a> and follow the instructions <a href="documents/configuration.html">here</a>. 
 	<p>Insert the following (or something similar) in your html source:</p>
 <pre><code>  &lt;!-- embed example --&gt;
   &lt;script th:remove=&quot;all&quot; type=&quot;text/javascript&quot; src=&quot;&lt;path-to-thymol&gt;thymol.js&quot;&gt;&lt;/script&gt;</code></pre>
+	<p>If you have bower installed (see <a href="http://bower.io/#install-bower">here</a>), setting up Thymol is even easier, simply execute:
+<pre><code>      bower install thymol
+</code></pre><p>in your project root directory and use the following script import line in your templates:
+<pre><code>  &lt;!-- bower example --&gt;
+  &lt;script th:remove=&quot;all&quot; type=&quot;text/javascript&quot; src=&quot;bower_components/thymol/dist/thymol.js&quot;&gt;&lt;/script&gt;</code></pre>
 <h3>example</h3>
 <p>Here is the footer example, re-worked slightly to use Thymol:</p>
 <pre><code>  &lt;!--thymol-usage.html--&gt;
@@ -86,7 +91,7 @@ description: Describes Thymeleaf static import problems and the way Thymol solve
 	.underlined-text {text-decoration:underline;}
       &lt;/style&gt;
     &lt;/head&gt;
-    &lt;script th:remove=&quot;all&quot; type=&quot;text/javascript&quot; src=&quot;../js/thymol.js&quot;&gt;&lt;/script&gt;
+    &lt;script th:remove=&quot;all&quot; type=&quot;text/javascript&quot; src=&quot;bower_components/thymol/dist/thymol.js&quot;&gt;&lt;/script&gt;
     &lt;body&gt;
       &lt;div class=&quot;red-text&quot;&gt;
 	&lt;div class=&quot;big-text&quot;&gt;

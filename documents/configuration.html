@@ -25,7 +25,8 @@ description: Describes Thymol configuration
             thDefaultMessagePath : "",
             thDefaultMessagesBaseName : "Messages",
             thDefaultRelativeRootPath: "",
-            thDefaultExtendedMapping: false
+            thDefaultExtendedMapping: false,
+            thDefaultLocalMessages: true
         };</code></pre><p>You must edit the value assigned to the &quot;thScriptName&quot; field and set it&#39;s value to the name of the Thymol library that you wish to use (&quot;thymol-full.js&quot; or &quot;thymol-lite.js&quot; or the minified version of either).</p>
     <p>The &quot;thJQuerySource&quot; field allows you to define the location of the jquery library you wish to use with Thymol. By default, the jquery library is assumed to be present in the same directory as your Thmyol library file (as specified by &quot;thScriptName&quot;), if this is the case, you only need to provide the jquery file name to get things working.</p>
     <p>If you remove the &quot;thJQuerySource&quot; field or set it&#39;s value to null or blank, then the bootstrap won&#39;t try to load jquery at all - use this option if your templates load jquery for themselves (via &quot;&lt;script&gt;&quot; tags or otherwise).</p>
@@ -65,6 +66,8 @@ description: Describes Thymol configuration
         <p>Sets the default value for the thRelativeRootPath variable.</p>   
         <h4>thDefaultExtendedMapping</h4>
         <p>Sets the default value for the thExtendedMapping variable.</p>   
+        <h4>thDefaultLocalMessages</h4>
+        <p>Sets the default value for the thLocalMessages variable.</p>   
     <h3>default dynamic values</h3>
     	There are two more configuration values that need to be assigned default values, these are the numeric precision control parameter and the attribute processing precedence values.
     	They are included in this section because they <b>must</b> be given values and hence they are set in the "thymol.js" script.

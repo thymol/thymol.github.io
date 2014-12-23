@@ -20,7 +20,7 @@ description: Defines the Thymol attributes xmlns prefix
     <pre><code>      &lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:tl="http://www.thymoljs.org"&gt;
       ...
       &lt;/html&gt;</code></pre>
-    <p>In this scenario, you can have the template elements having attributes with the prefix "th" processed by Thymeleaf, and those with a prefix "tl" post-processed in the browser by Thymol.</p> 
+    <p>In this scenario, template element attributes having the prefix "th" can be processed by Thymeleaf (as normal), and those with the prefix "tl" can be post-processed by Thymol in the browser.</p> 
     <p>The default value may be set to a different value using the thDefaultPrefix variable (<a href="../configuration.html?docu">see</a>).</p>
   </div>
   <div th:replace="../../fragments::footer"></div>

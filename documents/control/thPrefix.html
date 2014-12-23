@@ -10,7 +10,17 @@ description: Defines the Thymol attributes xmlns prefix
   <div class="content">
     <h2>thPrefix</h2>
     <p>The thPrefix parameter sets the prefix used to identify attributes for processing by Thymol.</p>
-    <p>The default value for this parameter is &quot;th&quot;. The default value is used if it isn't overridden by setting thPrefix and cannot be deduced from an appropriate xmlns declaration in the html element.</p>
+    <p>The default value for this parameter is &quot;th&quot;. The default value is used if not overridden.</p>
+    <p>You can override the default value by setting thPrefix directly using any of the usual mechanisms, by re-assigning in JavaScript, using a script parameter etc.</p> 
+    <p>If you're using XHTML, you can also set the value indirectly by defining a prefix for the "http://www.thymeleaf.org" xml namespace in the document html element. Like this:<p>
+    <pre><code>      &lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"&gt;
+      ...
+      &lt;/html&gt;</code></pre>
+    <p>You can also use the Thymol specific namespace "http://www.thymoljs.org". This namespace will not be recognised by Thymeleaf. You can use this fact if you wish to use Thymol in combination with Thymeleaf.</p>  
+    <pre><code>      &lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:tl="http://www.thymoljs.org"&gt;
+      ...
+      &lt;/html&gt;</code></pre>
+    <p>In this scenario, you can have the template elements having attributes with the prefix "th" processed by Thymeleaf, and those with a prefix "tl" post-processed in the browser by Thymol.</p> 
     <p>The default value may be set to a different value using the thDefaultPrefix variable (<a href="../configuration.html?docu">see</a>).</p>
   </div>
   <div th:replace="../../fragments::footer"></div>

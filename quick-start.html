@@ -1,0 +1,30 @@
+---
+title: Thymol Quick-Start
+description: Quick and easy introduction to using Thymol
+---
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+{% include header-section.html level="" %}
+<body>
+{% include common-section.html %}
+	<div class="content"> 		
+	  <h2>quick start</h2>
+	  <p>The quick and easy way to start using Thymol is to add a script tag to an existing Thymeleaf template.</p>
+    <p>For example:</p>
+    <pre><code>       &lt;script type=&quot;text/JavaScript&quot; src=&quot;http://cdn.jsdelivr.net/thymol/latest/thymol.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+    <p>Now load the Thymol-enabled template into your web browser using a local file open or equivalent.</p>
+    <p>If you now view the source of the resulting web page you might see that some of the embedded Thymeleaf attributes in the template have been successfully processed (and removed).</p>
+    <p>All but the simplest of templates will produce a result with unprocessed Thymeleaf attributes remaining in the source-view.</p>
+    <p>These are to be expected and will probably be the results of failures to process expressions due to unset variables, missing configuration items and so on.</p>
+    <h3>debugging</h3>
+    <p>An easy way to find out more about these processing failures is to turn on Thymol debugging.</p>
+    <p>Add the following script tag:</p>
+    <pre><code>        &lt;script type=&quot;text/JavaScript&quot;&gt; var thDebug = true;&lt;/script&gt;</code></pre><p>and refresh the web page.</p>
+    <p>Now Thymol should pop-up alert windows detailing problems as it encounters them.</p>
+    <h3>next steps</h3>
+    <p>To correct these failures you will have to add Thymol configuration and data.</p>
+    <p>You can find examples of how to set up data and configuration on this site and also in the sourceforge distribution (see <a href="http://sourceforge.net/projects/thymol/">here</a>).</p>
+    <p>For more information please view <a href="documentation.html" th:href="'documentation.html?docu'">documentation</a> or <a href="examples.html" th:href="'examples.html?exam'">examples</a>.</p>
+    <p></p>
+</body>
+</html>

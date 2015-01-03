@@ -33,7 +33,7 @@ description: Describes Thymol configuration
     <p>To use a network available copy of jquery then set the value of &quot;thJQuerySource&quot; to an appropriate URI.</p>
     <h3>invocation</h3>
     <p>Having correctly configured &quot;thymol.js&quot; you may now use it in your templates like this:</p>
-    <pre><code>       &lt;script type=&quot;text/JavaScript&quot; 
+    <pre><code>       &lt;script type=&quot;text/javascript&quot; 
          src=&quot;&lt;path-to-installed-file&gt;/thymol.js&quot; 
          data-thymol-load=&quot;&lt;list-of-project-specific-files&gt;&quot; 
          data-thymol-parameters=&quot;&lt;parameter-string&gt;&quot;&gt;
@@ -41,7 +41,7 @@ description: Describes Thymol configuration
     <p>You may also pass command-line parameters to Thymol by using the &quot;data-thymol-parameters&quot; attribute. This should be specified as a standard request parameter string (a name/value pair list starting with a &quot;?&quot; and separated by &quot;&amp;&quot;).</p>
     <p>If you wish to override the usual mechanism of locating jquery for a particular template you can do this by specifying the &quot;data-jquery-src&quot; attribute in the bootloader script tag.</p>
     <p>For example:</p>
-    <pre><code>       &lt;script type=&quot;text/JavaScript&quot; 
+    <pre><code>       &lt;script type=&quot;text/javascript&quot; 
          src=&quot;web/js/thymol.js&quot; 
          data-jquery-src=&quot;http://code.jquery.com/jquery-git2.min.js&quot;
          data-thymol-load=&quot;page-data.js&quot; 

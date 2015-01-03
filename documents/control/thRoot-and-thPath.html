@@ -35,7 +35,7 @@ description: Mechanism used to define location of Thymeleaf templates for Thymol
     <ul>
       <li>
         <p>Add something like this to you template before the script tag for "thymol.js"</p>
-    <pre><code>        &lt;script th:remove=&quot;all&quot; type=&quot;text/JavaScript&quot;&gt;
+    <pre><code>        &lt;script th:remove=&quot;all&quot; type=&quot;text/javascript&quot;&gt;
           var thRoot=&quot;~/projects/thymol/distr/Webcontent&quot;;
           var thPath=&quot;examples/thymol-example/hierarchy&quot;;
         &lt;/script&gt;</code></pre>
@@ -45,9 +45,9 @@ description: Mechanism used to define location of Thymeleaf templates for Thymol
     <pre><code>      var thRoot=&quot;~/projects/thymol/distr/Webcontent&quot;;
       var thPath=&quot;examples/thymol-example/hierarchy&quot;;</code></pre>
     <p>and add this to your template before the script tag for "thymol.js":</p>
-    <pre><code>      &lt;script th:remove=&quot;all&quot; type=&quot;text/JavaScript&quot; src=&quot;../assets/js/setThPath.js&quot;&gt;&lt;/script&gt;</code></pre>
+    <pre><code>      &lt;script th:remove=&quot;all&quot; type=&quot;text/javascript&quot; src=&quot;../assets/js/setThPath.js&quot;&gt;&lt;/script&gt;</code></pre>
     <p>or you could alter the script tag for "thymol.js":</p>
-    <pre><code>      &lt;script th:remove=&quot;all&quot; type=&quot;text/JavaScript&quot; src=&quot;&lt;some-path&gt;/thymol.js&quot; data-thymol-load=&quot;../assets/js/setThPath.js&quot;&gt;&lt;/script&gt;</code></pre>
+    <pre><code>      &lt;script th:remove=&quot;all&quot; type=&quot;text/javascript&quot; src=&quot;&lt;some-path&gt;/thymol.js&quot; data-thymol-load=&quot;../assets/js/setThPath.js&quot;&gt;&lt;/script&gt;</code></pre>
       </li>
     </ul>
   </div>

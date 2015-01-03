@@ -13,10 +13,10 @@ description: Controls the generation of alert dialogs when Thymol detects error 
     <p>When running in debug mode, Thymol will open an alert window each time a processing error occurs.</p>
     <p>For example, debug mode, an alert window is opened when a parsing error or an unrecognisable conditional expression is encountered or whenever an include or replace template cannot be opened.
     <p>You can define thDebug inside your template (before the Thymol script tag):</p>
-    <pre><code>        &lt;script th:remove=&quot;all&quot; type=&quot;text/JavaScript&quot;&gt;
+    <pre><code>        &lt;script th:remove=&quot;all&quot; type=&quot;text/javascript&quot;&gt;
             var thDebug = true;
         &lt;/script&gt;</code></pre><p>or define thDebug when Thymol is loaded:</p>
-    <pre><code>        &lt;script type=&quot;text/JavaScript&quot; src=&quot;../../../js/thymol.js&quot; data-thymol-parameters=&quot;?thProtocol=http://&amp;thDebug=true&quot;&gt;&lt;/script&gt;</code></pre><p>or define thDebug when the template is loaded:</p>        
+    <pre><code>        &lt;script type=&quot;text/javascript&quot; src=&quot;../../../js/thymol.js&quot; data-thymol-parameters=&quot;?thProtocol=http://&amp;thDebug=true&quot;&gt;&lt;/script&gt;</code></pre><p>or define thDebug when the template is loaded:</p>        
     <pre><code>        &lt;a href=&quot;jjb/project/big-example/page5.html?firstName=Fred&amp;surName=Bloggs&amp;thDebug=true&quot;&gt;link&lt;/a&gt;</code></pre>
     <p>In the case where a value for thDebug is defined by both a JavaScript variable and a request parameter, the value supplied as a request parameter will take precedence.</p>
   </div>

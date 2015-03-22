@@ -31,6 +31,19 @@ description: Describes Thymol control parameters
       <li><a href="control/thAllowNullText.html?docu&amp;para">thAllowNullText</a></li>
       <li style="color: grey;">thShowNullOperands has been deprecated</li>
     </ul>
+    <p>You may set any of the scalar valued parameters by one of the following mechanisms:</p>
+    <ul>
+      <li>Allow them to default (note that for some of these parameters, the default value may by reconfigured).</li>
+      <li>Set them using a script tag in the template source file.</li>
+      <li>Set them in a JavaScript source file imported into your template using a script tag.</li>
+      <li>Set them as query parameters on the referring link to the template.</li>
+      <li>Set them as parameters using the "data-thymol-parameters" attribute of the script tag that defines the Thymol import.</li>
+    </ul>
+    <p>e.g. The value of thProtocol may be set to &quot;http://&quot; for a particular template using:</p>
+    <pre>
+      <code>&lt;script type=&quot;text/javascript&quot; src=&quot;../../../js/thymol.js&quot; data-thymol-parameters=&quot;?thProtocol=http://&quot;&gt;&lt;/script&gt;
+</code>
+    </pre>
     <h3>structure valued parameters</h3>
     <ul>
       <li><a href="control/thVars.html?docu&amp;para">thVars</a></li>
@@ -38,19 +51,8 @@ description: Describes Thymol control parameters
       <li><a href="control/thMappings.html?docu&amp;para">thMappings</a></li>
       <li><a href="control/thDisable.html?docu&amp;para">thDisable</a></li>
     </ul>
-    <p>The effect of each of these parameters is discussed in the following sections. The way in which they may be defined is discussed here.</p>
-    <p>You may set any of the scalar valued parameters by one of the following mechanisms:</p>
-    <ul>
-      <li>Set them using a JavaScript element in each template source file.</li>
-      <li>Set them using a JavaScript element in an included JavaScript source file.</li>
-      <li>Set them as URL parameters on the src attribute of the html script element that defines the Thymol import.</li>
-      <li>Allow them to default!</li>
-    </ul>
-    <p>e.g. The value of thProtocol may be set to &quot;http://&quot; for a particular template using:</p>
-    <pre>
-      <code>&lt;script type=&quot;text/javascript&quot; src=&quot;../../../js/thymol.js&quot; data-thymol-parameters=&quot;?thProtocol=http://&quot;&gt;&lt;/script&gt;
-</code>
-    </pre>
+    <p>A detailed description of the effects of each of these parameters is discussed in further sub-sections of this page. You can reach these using the sub-menu selections on the left.</p>
+    <p>Setting the values of the structure valued parameters is best done in JavaScript.</p>
   </div>
   <div th:replace="../fragments::footer"></div>
 </body>

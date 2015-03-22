@@ -1,0 +1,19 @@
+---
+title: Thymol thResourcePath Control Parameter
+description: Controls the generation of alert dialogs when Thymol detects error conditions
+---
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+{% include header-section.html level="../../" %}
+<body>
+{% include common-section.html level="../../" %}
+  <div class="content">
+    <h2>thResourcePath</h2>
+    <p>The thResourcePath control parameter defines a value that will be used to prefix the (relative) path to resources when generating Standard URL values.</p>
+    <p>For fully qualified URL values, the thResourcePath value is inserted just before the relative portion taken from the template (after the protocol, domain and path components).</p>
+    <p>For relative URL values, the thResourcePath value is similarly inserted at the head of the URI.</p>
+    <p>(See also <a href="thUseFullURLPath.html?docu&amp;para">thUseFullURLPath</a> section).</p>
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+</body>
+</html>

@@ -10,9 +10,10 @@ description: Defines location of externalised Thymol message content
   <div class="content">
     <h2>thMessagePath</h2>
     <p>Thymol uses the thMessagePath to determine the location of properties files that contain the default externalised messages for a template.</p>
+    <p>The value of thMessagePath should be the location of the template file directory relative to the current template path.</p>
     <p>By default, the externalised messages files are named "Messages.properties" or "Messages(suffix).properties".</p>
     <p>In the second form (suffix) represents an optional locale specification in the form "_ll_CC-vv". Here, "ll" is a specifier for language, "CC" an optional country and "vv" an optional variant.</p>
-    <p>You can change the name used when searching for messages files by setting the value of the thMessagesBaseName control variable.
+    <p>You can change the name used when searching for messages files by setting the value of the <a href="thMessagesBaseName.html?docu&amp;para">thMessagesBaseName</a> control variable.
   </div>
   <div th:replace="../../fragments::footer"></div>
 </body>

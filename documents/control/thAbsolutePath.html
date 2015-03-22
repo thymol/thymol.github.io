@@ -1,0 +1,19 @@
+---
+title: Thymol thAbsolutePath Control Parameter
+description: Overrides the path when resolving templates
+---
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+{% include header-section.html level="../../" %}
+<body>
+{% include common-section.html level="../../" %}
+  <div class="content">
+    <h2>thAbsolutePath</h2>
+    <p>The thAbsolutePath may be used to override the path value used in template resolution.</p>
+    <p>The override will only be enforced if the <a href="thUseAbsolutePath.html?docu&amp;para">thUseAbsolutePath</a> parameter is in effect (set to "true").</p>
+    <p>The path value will be prefixed by any thProtocol value that is in effect.</p>
+    <p>The relative fragment from the template is appended to the resultant URI before resolution takes place.</p>
+  </div>
+  <div th:replace="../../fragments::footer"></div>
+</body>
+</html>

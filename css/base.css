@@ -60,12 +60,12 @@ p {
 	color: #f90;
 }
 
-#footer {
+#header {
 	color: grey;
 	font-size: 10px;
 	font-style: bold;	
     position:fixed;
-    bottom:0;
+    top:0;
     right:0;	
     height:18px;
     width:160px;
